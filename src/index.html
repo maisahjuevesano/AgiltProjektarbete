@@ -14,7 +14,28 @@
   </head>
   <body>
     <header>
-      <nav class="menu"></nav>
+      <nav>
+        <section class="top-nav">
+          <div class="top-nav__bag">
+            <img src="/src/assets/img/logo.jpg" alt="logo" />
+            <a href="#">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+          </div>
+
+          <div class="top-nav__logo">Logo Here</div>
+          <input id="menu-toggle" type="checkbox" />
+          <label class="menu-button-container" for="menu-toggle">
+            <div class="menu-button"></div>
+          </label>
+
+          <ul class="menu">
+            <a href="#header"><li class="menu__link">Stekpannor</li></a>
+            <a href="#about"><li class="menu__link">Kastruller</li></a>
+            <a href="#contact"><li class="menu__link">Bestick</li></a>
+          </ul>
+        </section>
+      </nav>
     </header>
 
     <main class="hero"></main>
