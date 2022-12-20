@@ -1,0 +1,40 @@
+@use "../components/breakpoints" as bp;
+@use "../components/colors" as c;
+
+// Breakpoints
+
+@mixin navbar {
+  @media screen and (min-width: bp.$breakPoint-navbar) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media screen and (min-width: bp.$breakPoint-small) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media screen and (min-width: bp.$breakPoint-medium) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media screen and (min-width: bp.$breakPoint-large) {
+    @content;
+  }
+}
+
+@mixin xlarge {
+  @media screen and (min-width: bp.$breakPoint-xLarge) {
+    @content;
+  }
+}
+
+@mixin xxlarge {
+  @media screen and (min-width: bp.$breakPoint-xxLarge) {
+    @content;
+  }
+}
