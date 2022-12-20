@@ -1,0 +1,15 @@
+@mixin productPic {
+  width: 40vw;
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin deskop {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}

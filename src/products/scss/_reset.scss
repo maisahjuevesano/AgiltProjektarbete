@@ -1,0 +1,20 @@
+@use "mixins" as m;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-size: 10pt;
+
+  @include m.tablet {
+    font-size: 15pt;
+  }
+  @include m.deskop {
+    font-size: 18pt;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,48 @@
+@use "mixins" as m;
+
+body {
+  background-color: rgb(255, 255, 255);
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  #root {
+    width: 100vw;
+    margin: 0;
+    padding: 2%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .productContainer {
+      width: 45%;
+      height: 30%;
+      background-color: rgb(210, 210, 210);
+      margin: 2%;
+      padding: 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .productContainer > img {
+      @include m.productPic;
+    }
+
+    p {
+      width: 100%;
+    }
+
+    // button,
+    span {
+      background-color: rgb(109, 49, 49);
+      color: white;
+      padding: 5%;
+      margin: 2%;
+    }
+  }
+}
