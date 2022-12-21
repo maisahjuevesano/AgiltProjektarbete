@@ -104,12 +104,18 @@ function createHtml() {
     picture.alt = products[i].name;
 
     let title: HTMLParagraphElement = document.createElement("p");
+    title.className = "product__title";
     title.innerHTML = products[i].name;
+
+    let price: HTMLParagraphElement = document.createElement("p");
+    price.className = "product__price";
+    price.innerHTML = products[i].price + "kr";
 
     // let addToCartBtn: HTMLButtonElement = document.createElement("button");
     // addToCartBtn.type = "button";
     let addToCartBtn: HTMLSpanElement = document.createElement("span");
-    addToCartBtn.innerHTML = "Lägg till i varukorg";
+    // addToCartBtn.innerHTML = "Lägg till i varukorg";
+    addToCartBtn.innerHTML = `<i class="fas fa-cart-plus"></i>`;
 
     let rootContainer: HTMLDivElement = document.getElementById(
       "root"
@@ -117,11 +123,17 @@ function createHtml() {
 
     objectContainer.appendChild(picture);
     objectContainer.appendChild(title);
+    objectContainer.appendChild(price);
     objectContainer.appendChild(addToCartBtn);
     rootContainer.appendChild(objectContainer);
 
     // Fixa funktionalitet för att lägga till i varukorgs-array
-    //Skicka med objektet som man klickade på.
+    //Skicka med objektet som man klickade på som parameter till
     //addToCartBtn.addEventListener("click", funktion för varukorgssidan och listan(parameter objekt) ... )
+
+    /*************************************** */
+    //Funktionalitet för att komma till produktbeskrivning. Eventlistener på picture, title och price.
+
+    // picture.addEventListener("click", produktbeskrivning skapa ny html skicka med objektet du klickade på)
   }
 }
