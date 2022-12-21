@@ -19,7 +19,7 @@ body {
 
     .productContainer {
       width: 45%;
-      height: 30%;
+      // height: 30%;
       background-color: rgb(207, 207, 207);
       margin: 2%;
       padding: 5%;
@@ -40,28 +40,33 @@ body {
       }
     }
 
-    .productContainer > img {
+    // .clickContainer {
+    //   text-decoration: none;
+    img {
       @include m.productPic;
 
       @include m.tablet {
         width: 28vw;
       }
-
       @include m.desktop {
         width: 21vw;
       }
     }
 
     p.product__title {
-      width: 100%;
+      width: 90%;
       margin: 10%;
+      text-align: center;
+      text-decoration: none;
     }
 
     p.product__price {
       font-weight: 600;
       margin: 10%;
+      text-align: center;
+      text-decoration: none;
     }
-
+    // }
     // button,
     span {
       // background-color: rgb(109, 49, 49);
