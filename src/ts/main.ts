@@ -215,3 +215,5 @@ function createHtml() {
 //   window.open("productDetail/productDetails.html");
 //   provaLite(obj);
 // }
+let orderNumber: number = Math.floor(Math.random() * 999999 + 111111);
+console.log(orderNumber);
