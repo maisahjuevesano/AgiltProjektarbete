@@ -99,9 +99,12 @@ function createHtml() {
     let objectContainer: HTMLDivElement = document.createElement("div");
     objectContainer.className = "productContainer";
 
-    // let clickableContainer: HTMLAnchorElement = document.createElement("a");
-    // clickableContainer.className = "clickContainer";
-    // clickableContainer.setAttribute("href", "javascript:test()");
+    let clickableContainer: HTMLAnchorElement = document.createElement("a");
+    clickableContainer.className = "clickContainer";
+    clickableContainer.setAttribute(
+      "href",
+      "productDetail/productDetails.html"
+    );
 
     // clickableContainer.setAttribute("href", "./../productDetails.html");
 
@@ -127,20 +130,22 @@ function createHtml() {
       "root"
     ) as HTMLDivElement;
 
-    // clickableContainer.appendChild(picture);
-    // clickableContainer.appendChild(title);
-    // clickableContainer.appendChild(price);
-    // objectContainer.appendChild(clickableContainer);
+    clickableContainer.appendChild(picture);
+    clickableContainer.appendChild(title);
+    clickableContainer.appendChild(price);
+    objectContainer.appendChild(clickableContainer);
 
-    objectContainer.appendChild(picture);
-    objectContainer.appendChild(title);
-    objectContainer.appendChild(price);
+    // objectContainer.appendChild(picture);
+    // objectContainer.appendChild(title);
+    // objectContainer.appendChild(price);
     objectContainer.appendChild(addToCartBtn);
     rootContainer.appendChild(objectContainer);
 
     picture.addEventListener("click", test);
     title.addEventListener("click", test);
     price.addEventListener("click", test);
+
+    //
 
     // Fixa funktionalitet för att lägga till i varukorgs-array
     //Skicka med objektet som man klickade på som parameter till
@@ -160,7 +165,7 @@ function test() {
   // alert("tjena");
   console.log("testar lite");
   // window.open("https://www.google.com", "_blank");
-  window.open("/src/products/productDetails.html", "_blank");
+  // window.open("/src/products/productDetails.html", "_blank");
 
   //funkar ej, mst ha fler parcel local host igång??
 }
