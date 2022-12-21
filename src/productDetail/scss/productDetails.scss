@@ -1,0 +1,16 @@
+@use "./../../scss/components" as c;
+
+body {
+  background-color: rgb(228, 227, 221);
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 70vw;
+    }
+  }
+}
