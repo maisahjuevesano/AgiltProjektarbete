@@ -1,1 +1,24 @@
 @use "../components/" as c;
+
+.containerlist {
+  width: 100%;
+  background-color: lightblue;
+  color: black;
+  font-size: 1.1rem;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  justify-content: center;
+
+  li {
+    list-style: none;
+    font-style: normal;
+    padding: 10px;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
