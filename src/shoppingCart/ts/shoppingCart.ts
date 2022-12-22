@@ -25,19 +25,19 @@ function emptyShoppingCart(cartProducts: Product[]) {
 
 //hama och maisah
 
-// let orderContainer: HTMLParagraphElement = document.getElementById(
-//   "container__ordernumber"
-// ) as HTMLParagraphElement;
+let orderContainer: HTMLParagraphElement = document.getElementById(
+  "container__ordernumber"
+) as HTMLParagraphElement;
 
-// let pay: HTMLButtonElement = document.getElementById(
-//   "pay"
-// ) as HTMLButtonElement;
+let pay: HTMLButtonElement = document.getElementById(
+  "pay"
+) as HTMLButtonElement;
 
 //funktion till betala knappen så man kommer till orderConfirmation.html
 
-// pay.addEventListener("click", () => {
-//   window.location.href = "../../orderConfirmation/orderConfirmation.html";
-// });
+pay.addEventListener("click", () => {
+  window.location.href = "../../orderConfirmation/orderConfirmation.html";
+});
 
 // pay.addEventListener("click", () => {
 //   let orderNumber: number = Math.floor(Math.random() * 999999 + 111111);
