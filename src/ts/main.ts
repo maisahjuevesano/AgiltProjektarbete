@@ -192,18 +192,10 @@ function createHtml() {
     addToCartBtn.addEventListener("click", () => {
       handleClick(products[i]);
     });
-
-    /*************************
-     *
-     *
-     *
-     *
-     * ************** */
-    //Funktionalitet för att komma till produktbeskrivning. Eventlistener på picture, title och price.
   }
 }
 
-function handleClick(product: Product) {
+export function handleClick(product: Product) {
   cartProducts.push(product);
   localStorage.setItem("storageList", JSON.stringify(cartProducts));
   console.log(cartProducts);

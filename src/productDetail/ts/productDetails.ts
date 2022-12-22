@@ -1,4 +1,4 @@
-// import { addToShoppingCart } from "../../shoppingCart/ts/shoppingCart";
+import { cartProducts } from "../../ts/main";
 import { Product } from "../../ts/models/Products";
 
 window.onload = function () {
@@ -28,7 +28,7 @@ export const showDescription = (product: Product) => {
   title.innerHTML = product.name;
 
   let productBrand: HTMLParagraphElement = document.createElement("p");
-  productBrand.innerHTML = product.brand;
+  productBrand.innerHTML = "Märke: " + product.brand;
 
   let productDescription: HTMLSpanElement = document.createElement("span");
   productDescription.innerHTML = product.description;
@@ -38,43 +38,17 @@ export const showDescription = (product: Product) => {
   let priceText = price.toString();
   priceTag.innerHTML = priceText + "kr";
 
-  let addToCartBtn: HTMLSpanElement = document.createElement("span");
-  addToCartBtn.className = "addToCart";
-  addToCartBtn.id = "addCart";
-  addToCartBtn.innerHTML = `<i class="fas fa-cart-plus"></i>`;
+  let addToCart: HTMLSpanElement = document.createElement("span");
+  addToCart.className = "addToCart";
+  addToCart.id = "addCart";
+  addToCart.innerHTML = `<i class="fas fa-cart-plus"></i>`;
 
   rootDiv.appendChild(picture);
   rootDiv.appendChild(title);
-  rootDiv.appendChild(productBrand);
   rootDiv.appendChild(productDescription);
+  rootDiv.appendChild(productBrand);
   rootDiv.appendChild(priceTag);
-  rootDiv.appendChild(addToCartBtn);
+  rootDiv.appendChild(addToCart);
 
-  // addToCartBtn.addEventListener("click", () => {
-  //   handleClick()
-  //   localStorage.setItem("shoppingCart", JSON.stringify(productsToShow));
-  //   addToShoppingCart(product);
-  // });
+  // addToCart.addEventListener("click", () => {});
 };
-
-// }
-
-// export function startup(product: string) {
-//   // alert("tjena");
-//   console.log("testar lite");
-//   window.open("productDetail/productDetails.html");
-//   console.log(product);
-//   let title: HTMLHeadingElement = document.createElement("h2");
-
-//   title.innerHTML = product;
-//   let rootDiv: HTMLDivElement = document.getElementById(
-//     "root"
-//   ) as HTMLDivElement;
-
-//   rootDiv.appendChild(title);
-
-//   // window.open("https://www.google.com", "_blank");
-//   // window.open("/src/products/productDetails.html", "_blank");
-
-//   //funkar ej, mst ha fler parcel local host igång??
-// }

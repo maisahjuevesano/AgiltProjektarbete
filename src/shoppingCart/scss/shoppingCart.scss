@@ -1,0 +1,27 @@
+@use "../../scss/components" as c;
+
+#root {
+  display: flex;
+  flex-direction: column;
+
+  .articleContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    // border: 2px solid gray;
+    border-bottom: 1px solid lightgrey;
+
+    @include c.small {
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  }
+
+  img {
+    width: 30vw;
+    @include c.small {
+      width: 20vw;
+    }
+  }
+}
