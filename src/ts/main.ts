@@ -153,11 +153,9 @@ function createHtml() {
     price.className = "product__price";
     price.innerHTML = products[i].price + "kr";
 
-    // let addToCartBtn: HTMLButtonElement = document.createElement("button");
-    // addToCartBtn.type = "button";
-    // addToCartBtn.innerHTML = "Lägg till i varukorg";
-
     let addToCartBtn: HTMLSpanElement = document.createElement("span");
+    addToCartBtn.className = "addToCart";
+    addToCartBtn.id = "addCart";
     addToCartBtn.innerHTML = `<i class="fas fa-cart-plus"></i>`;
 
     let rootContainer: HTMLDivElement = document.getElementById(
@@ -168,9 +166,6 @@ function createHtml() {
     clickableContainer.appendChild(title);
     clickableContainer.appendChild(price);
 
-    // objectContainer.appendChild(picture);
-    // objectContainer.appendChild(title);
-    // objectContainer.appendChild(price);
     objectContainer.appendChild(clickableContainer);
     objectContainer.appendChild(addToCartBtn);
     rootContainer.appendChild(objectContainer);
