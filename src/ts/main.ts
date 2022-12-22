@@ -8,7 +8,7 @@ window.onload = function () {
   createHtml();
 };
 
-let products = [
+export let products = [
   new Product(
     "Tefal Jamie Oliver Cook's classic",
     680,
@@ -119,6 +119,10 @@ let products = [
   ),
 ];
 
+export let cartProducts: Product[] = JSON.parse(
+  localStorage.getItem("storageList") || "[]"
+);
+
 /************************** 
 Sortera på brands-egenskapen:
 
@@ -130,6 +134,8 @@ Jamie Oliver
 Lodge
 ********************************/
 function createHtml() {
+  console.log(cartProducts); //visar alla produkter i ens varukorg
+
   for (let i = 0; i < products.length; i++) {
     let objectContainer: HTMLDivElement = document.createElement("div");
     objectContainer.className = "productContainer";
@@ -183,41 +189,26 @@ function createHtml() {
       window.location.href = "shoppingCart/shoppingCart.html";
     });
 
-    // clickableContainer.addEventListener("click", () => {
-    //   window.location.href = "product-details.html";
-    //   sendProductDetailsToLs(product);
-    // });
+    addToCartBtn.addEventListener("click", () => {
+      handleClick(products[i]);
+    });
 
-    // <a href = "javascript:;" onclick = "this.href='Page2.htm?name=' + document.getElementById('txtName').value">Send</a>
-    // picture.addEventListener("click", test);
-    // title.addEventListener("click", test);
-    // price.addEventListener("click", test);
-
-    // Fixa funktionalitet för att lägga till i varukorgs-array
-    // Skicka med objektet som man klickade på som parameter till
-    //addToCartBtn.addEventListener("click", funktion för varukorgssidan och listan(parameter objekt) ... )
-
-    /*************************************** */
+    /*************************
+     *
+     *
+     *
+     *
+     * ************** */
     //Funktionalitet för att komma till produktbeskrivning. Eventlistener på picture, title och price.
-
-    // picture.addEventListener("click", produktbeskrivning skapa ny html skicka med objektet du klickade på)
-    //     title.addEventListener("click", () => {
-    //   window.location.replace("./../productDetails.html");
-    // });
   }
+}
+
+function handleClick(product: Product) {
+  cartProducts.push(product);
+  localStorage.setItem("storageList", JSON.stringify(cartProducts));
+  console.log(cartProducts);
 }
 
 function sendProductDetailsToLs(product: Product) {
   localStorage.setItem("productDetails", JSON.stringify(product));
-  // window.open("productDetail/productDetails.html");
 }
-
-// function openShoppingCartPage() {
-//   let cartSymbol: HTMLAnchorElement = document.getElementById(
-//     "cart"
-//   ) as HTMLAnchorElement;
-
-//   cartSymbol.addEventListener("click", () => {
-//     window.location.href = "shoppingCart/shoppingCart.html";
-//   });
-// }
