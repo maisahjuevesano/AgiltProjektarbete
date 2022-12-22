@@ -1,25 +1,22 @@
 import { Product } from "../../ts/models/Products";
 
-let theShoppingCart: Product[] = [];
+let emptyBtn = document.getElementById("emptyCart") as HTMLButtonElement;
 
-export function addToShoppingCart(product: Product) {
-  //   let addBtn: HTMLSpanElement = document.getElementById(
-  //     "addCart"
-  //   ) as HTMLSpanElement;
-  theShoppingCart.push(product);
+window.onload = function () {
+  let cartProducts: Product[] = JSON.parse(
+    localStorage.getItem("storageList") || "[]"
+  );
 
-  localStorage.setItem("shoppingCart", JSON.stringify(theShoppingCart));
-  //   product.amount = product.amount + 1;
+  console.log(cartProducts);
 
-  //   if (product.amount < 2) {
-  //     theShoppingCart.push(product);
-  //     console.log(theShoppingCart);
-  //   } else {
-  //     product.amount = product.amount + 1;
-  //   }
+  emptyBtn.addEventListener("click", () => {
+    emptyShoppingCart(cartProducts);
+  });
+};
+
+function emptyShoppingCart(cartProducts: Product[]) {
+  cartProducts.splice(0, cartProducts.length);
+  //   localStorage.clear();
+  localStorage.setItem("storageList", JSON.stringify(cartProducts));
+  console.log(cartProducts);
 }
-
-// function sendToCartLs(product: Product) {
-//   localStorage.setItem("shoppingCart", JSON.stringify(product));
-//   // window.open("productDetail/productDetails.html");
-// }
