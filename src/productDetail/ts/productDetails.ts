@@ -1,3 +1,4 @@
+import { addToShoppingCart } from "../../shoppingCart/ts/shoppingCart";
 import { Product } from "../../ts/models/Products";
 
 window.onload = function () {
@@ -5,7 +6,7 @@ window.onload = function () {
   getProductDetailsFromLs();
 };
 
-let productsToShow: Product[] = [];
+// let productsToShow: Product[] = [];
 
 function getProductDetailsFromLs() {
   let productDetails: Product = JSON.parse(
@@ -25,7 +26,7 @@ export const showDescription = (product: Product) => {
   picture.src = product.imageUrl;
   picture.alt = product.name;
 
-  let title: HTMLHeadingElement = document.createElement("h1");
+  let title: HTMLHeadingElement = document.createElement("h2");
   title.innerHTML = product.name;
 
   let productBrand: HTMLParagraphElement = document.createElement("p");
@@ -34,17 +35,26 @@ export const showDescription = (product: Product) => {
   let productDescription: HTMLSpanElement = document.createElement("span");
   productDescription.innerHTML = product.description;
 
-  //   let priceTag: HTMLParagraphElement = document.createElement("p");
-  //   let price = product.price;
-  //   let priceText = price.toString();
+  let priceTag: HTMLHeadingElement = document.createElement("h3");
+  let price = product.price;
+  let priceText = price.toString();
+  priceTag.innerHTML = priceText + "kr";
 
-  //   priceTag.innerHTML = priceText;
+  let addToCartBtn: HTMLSpanElement = document.createElement("span");
+  addToCartBtn.className = "addToCart";
+  addToCartBtn.id = "addCart";
+  addToCartBtn.innerHTML = `<i class="fas fa-cart-plus"></i>`;
 
   rootDiv.appendChild(picture);
   rootDiv.appendChild(title);
   rootDiv.appendChild(productBrand);
   rootDiv.appendChild(productDescription);
-  //   rootDiv.appendChild(priceTag);
+  rootDiv.appendChild(priceTag);
+  rootDiv.appendChild(addToCartBtn);
+
+  addToCartBtn.addEventListener("click", () => {
+    addToShoppingCart(product);
+  });
 };
 
 // }

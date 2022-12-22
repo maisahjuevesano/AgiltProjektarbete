@@ -1,7 +1,7 @@
 @use "./../../scss/components" as c;
 
 body {
-  background-color: rgb(228, 227, 221);
+  background-color: rgb(255, 255, 255);
 
   #root {
     display: flex;
@@ -10,7 +10,24 @@ body {
     align-items: center;
 
     img {
-      width: 70vw;
+      width: 80vw;
+
+      @include c.small {
+        width: 40vw;
+      }
+    }
+
+    .addToCart {
+      background-color: rgba(14, 47, 117, 0.926);
+      // font-size: 15pt;
+      color: white;
+      padding: 11%;
+      margin: 2%;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
