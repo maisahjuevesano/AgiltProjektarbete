@@ -37,14 +37,17 @@ export const showDescription = (product: Product) => {
   let priceTag: HTMLHeadingElement = document.createElement("h3");
   let price = product.price;
   let priceText = price.toString();
-
   priceTag.innerHTML = priceText + "kr";
+
+  let addToCartBtn: HTMLSpanElement = document.createElement("span");
+  addToCartBtn.innerHTML = `<i class="fas fa-cart-plus"></i>`;
 
   rootDiv.appendChild(picture);
   rootDiv.appendChild(title);
   rootDiv.appendChild(productBrand);
   rootDiv.appendChild(productDescription);
   rootDiv.appendChild(priceTag);
+  rootDiv.appendChild(addToCartBtn);
 };
 
 // }

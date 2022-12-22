@@ -180,6 +180,14 @@ function createHtml() {
       sendProductDetailsToLs(products[i]);
     });
 
+    let cartSymbol: HTMLAnchorElement = document.getElementById(
+      "cart"
+    ) as HTMLAnchorElement;
+
+    cartSymbol.addEventListener("click", () => {
+      window.location.href = "shoppingCart/shoppingCart.html";
+    });
+
     // clickableContainer.addEventListener("click", () => {
     //   window.location.href = "product-details.html";
     //   sendProductDetailsToLs(product);
@@ -202,16 +210,19 @@ function createHtml() {
     //   window.location.replace("./../productDetails.html");
     // });
   }
-
-  function sendProductDetailsToLs(product: Product) {
-    localStorage.setItem("productDetails", JSON.stringify(product));
-    // window.open("productDetail/productDetails.html");
-  }
 }
 
-// function prova(obj: Product) {
-//   window.open("productDetail/productDetails.html");
-//   provaLite(obj);
+function sendProductDetailsToLs(product: Product) {
+  localStorage.setItem("productDetails", JSON.stringify(product));
+  // window.open("productDetail/productDetails.html");
+}
+
+// function openShoppingCartPage() {
+//   let cartSymbol: HTMLAnchorElement = document.getElementById(
+//     "cart"
+//   ) as HTMLAnchorElement;
+
+//   cartSymbol.addEventListener("click", () => {
+//     window.location.href = "shoppingCart/shoppingCart.html";
+//   });
 // }
-let orderNumber: number = Math.floor(Math.random() * 999999 + 111111);
-console.log(orderNumber);
