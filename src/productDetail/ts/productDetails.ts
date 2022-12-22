@@ -1,12 +1,10 @@
-import { addToShoppingCart } from "../../shoppingCart/ts/shoppingCart";
+// import { addToShoppingCart } from "../../shoppingCart/ts/shoppingCart";
 import { Product } from "../../ts/models/Products";
 
 window.onload = function () {
   console.log("tjo");
   getProductDetailsFromLs();
 };
-
-// let productsToShow: Product[] = [];
 
 function getProductDetailsFromLs() {
   let productDetails: Product = JSON.parse(
@@ -52,9 +50,11 @@ export const showDescription = (product: Product) => {
   rootDiv.appendChild(priceTag);
   rootDiv.appendChild(addToCartBtn);
 
-  addToCartBtn.addEventListener("click", () => {
-    addToShoppingCart(product);
-  });
+  // addToCartBtn.addEventListener("click", () => {
+  //   handleClick()
+  //   localStorage.setItem("shoppingCart", JSON.stringify(productsToShow));
+  //   addToShoppingCart(product);
+  // });
 };
 
 // }
