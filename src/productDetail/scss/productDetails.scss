@@ -1,7 +1,7 @@
 @use "./../../scss/components" as c;
 
 body {
-  background-color: rgb(228, 227, 221);
+  background-color: rgb(255, 255, 255);
 
   #root {
     display: flex;
@@ -10,7 +10,11 @@ body {
     align-items: center;
 
     img {
-      width: 70vw;
+      width: 80vw;
+
+      @include c.small {
+        width: 40vw;
+      }
     }
   }
 }

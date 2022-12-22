@@ -25,7 +25,7 @@ export const showDescription = (product: Product) => {
   picture.src = product.imageUrl;
   picture.alt = product.name;
 
-  let title: HTMLHeadingElement = document.createElement("h1");
+  let title: HTMLHeadingElement = document.createElement("h2");
   title.innerHTML = product.name;
 
   let productBrand: HTMLParagraphElement = document.createElement("p");
@@ -34,17 +34,17 @@ export const showDescription = (product: Product) => {
   let productDescription: HTMLSpanElement = document.createElement("span");
   productDescription.innerHTML = product.description;
 
-  //   let priceTag: HTMLParagraphElement = document.createElement("p");
-  //   let price = product.price;
-  //   let priceText = price.toString();
+  let priceTag: HTMLHeadingElement = document.createElement("h3");
+  let price = product.price;
+  let priceText = price.toString();
 
-  //   priceTag.innerHTML = priceText;
+  priceTag.innerHTML = priceText + "kr";
 
   rootDiv.appendChild(picture);
   rootDiv.appendChild(title);
   rootDiv.appendChild(productBrand);
   rootDiv.appendChild(productDescription);
-  //   rootDiv.appendChild(priceTag);
+  rootDiv.appendChild(priceTag);
 };
 
 // }
