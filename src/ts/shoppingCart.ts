@@ -5,11 +5,11 @@ window.onload = function () {
     localStorage.getItem("storageList") || "[]"
   );
 
-  let emptyBtn = document.getElementById("emptyCart") as HTMLButtonElement;
-
+  startUp();
   showShoppingCart(cartProducts);
   console.log(cartProducts);
 
+  let emptyBtn = document.getElementById("emptyCart") as HTMLButtonElement;
   emptyBtn.addEventListener("click", () => {
     emptyShoppingCart(cartProducts);
   });
@@ -23,17 +23,19 @@ function emptyShoppingCart(cartProducts: Product[]) {
   rootDiv.innerHTML = "";
 }
 
-let orderContainer: HTMLParagraphElement = document.getElementById(
-  "container__ordernumber"
-) as HTMLParagraphElement;
+function startUp() {
+  let orderContainer: HTMLParagraphElement = document.getElementById(
+    "container__ordernumber"
+  ) as HTMLParagraphElement;
 
-let pay: HTMLButtonElement = document.getElementById(
-  "pay"
-) as HTMLButtonElement;
+  let pay: HTMLButtonElement = document.getElementById(
+    "pay"
+  ) as HTMLButtonElement;
 
-pay.addEventListener("click", () => {
-  window.location.href = "../../orderConfirmation/orderConfirmation.html";
-});
+  pay.addEventListener("click", () => {
+    window.location.href = "../pages/orderConfirmation.html";
+  });
+}
 
 // pay.addEventListener("click", () => {
 //   let orderNumber: number = Math.floor(Math.random() * 999999 + 111111);
@@ -57,10 +59,12 @@ pay.addEventListener("click", () => {
 const showShoppingCart = (cartProducts: Product[]) => {
   for (let i = 0; i < cartProducts.length; i++) {
     let cartArticle: HTMLDivElement = document.createElement("div");
-    cartArticle.className = "articleContainer";
+    cartArticle.className = "article--container";
 
     let articleImg: HTMLImageElement = document.createElement("img");
     articleImg.src = cartProducts[i].imageUrl;
+    articleImg.alt = cartProducts[i].name;
+    articleImg.className = "article--pic";
 
     let articleTitle: HTMLParagraphElement = document.createElement("p");
     articleTitle.innerHTML = cartProducts[i].name;

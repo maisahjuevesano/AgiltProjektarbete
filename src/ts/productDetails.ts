@@ -18,7 +18,7 @@ function getProductDetailsFromLs() {
 
 export const showDescription = (product: Product) => {
   let rootDiv: HTMLDivElement = document.getElementById(
-    "root"
+    "productDetailRoot"
   ) as HTMLDivElement;
 
   let picture: HTMLImageElement = document.createElement("img");

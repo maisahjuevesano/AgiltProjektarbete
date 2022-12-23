@@ -177,7 +177,7 @@ function createHtml() {
     rootContainer.appendChild(objectContainer);
 
     clickableContainer.addEventListener("click", () => {
-      window.location.href = "productDetail/productDetails.html";
+      window.location.href = "pages/productDetails.html";
       sendProductDetailsToLs(products[i]);
     });
 
@@ -186,7 +186,7 @@ function createHtml() {
     ) as HTMLAnchorElement;
 
     cartSymbol.addEventListener("click", () => {
-      window.location.href = "shoppingCart/shoppingCart.html";
+      window.location.href = "pages/shoppingCart.html";
     });
 
     addToCartBtn.addEventListener("click", () => {

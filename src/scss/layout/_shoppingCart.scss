@@ -4,13 +4,14 @@
   display: flex;
   flex-direction: column;
 
-  .articleContainer {
+  .article--container {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     align-items: center;
     // border: 2px solid gray;
     border-bottom: 1px solid lightgrey;
+    width: 90%;
 
     @include c.small {
       flex-direction: row;
@@ -18,14 +19,14 @@
     }
   }
 
-  img {
-    width: 30vw;
+  img.article--pic {
+    width: 15vw;
     @include c.small {
-      width: 20vw;
+      width: 10vw;
     }
 
     @include c.medium {
-      width: 10vw;
+      width: 5vw;
     }
   }
 }
