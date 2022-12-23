@@ -1,4 +1,4 @@
-import { Product } from "../../ts/models/Products";
+import { Product } from "./models/Products";
 let rootDiv: HTMLDivElement = document.getElementById("root") as HTMLDivElement;
 window.onload = function () {
   let cartProducts: Product[] = JSON.parse(
