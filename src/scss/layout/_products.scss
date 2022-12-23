@@ -3,13 +3,11 @@
 
 body {
   background-color: rgb(255, 255, 255);
-  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
 
   #root {
-    width: 100vw;
     margin: 0;
     padding: 2%;
     background-color: rgb(255, 255, 255);
@@ -67,8 +65,7 @@ body {
       text-align: center;
       text-decoration: none;
     }
-    // }
-    // button,
+
     span {
       // background-color: rgb(109, 49, 49);
       background-color: rgba(14, 47, 117, 0.926);

@@ -1,5 +1,6 @@
-import { cartProducts } from "../../ts/main";
-import { Product } from "../../ts/models/Products";
+import { cartProducts } from "./main"; //behövs denna?
+
+import { Product } from "./models/Products";
 
 window.onload = function () {
   console.log("tjo");

@@ -20,6 +20,6 @@
     "dotenv": "^16.0.3"
   },
   "scripts": {
-    "start": "npx parcel src/index.html src/products/products.html src/productDetail/productDetails.html src/orderConfirmation/orderConfirmation.html src/shoppingCart/shoppingCart.html --no-cache"
+    "start": "npx parcel src/index.html src/pages/products.html src/pages/productDetails.html src/pages/orderConfirmation.html src/pages/shoppingCart.html --no-cache"
   }
 }

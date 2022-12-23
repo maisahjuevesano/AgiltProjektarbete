@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>order bekräftelse</title>
-    <link rel="stylesheet" href="./scss/orderConfirmation.scss" />
-    <script defer src="ts/orderConfirmation.ts" type="module"></script>
+    <title>Varukorg</title>
+    <!-- <link rel="stylesheet" href="/src/shoppingCart/scss/shoppingCart.scss" /> -->
+    <link rel="stylesheet" href="../scss/main.scss" />
+    <script defer src="/src/ts/shoppingCart.ts" type="module"></script>
   </head>
   <body>
     <nav>
@@ -33,16 +34,9 @@
         </ul>
       </section>
     </nav>
-    <div class="container">
-      <h2>Tack för din beställning!</h2>
-      <h2>Orderbekräftelse</h2>
-      <div class="container__overview">
-        <p id="orderConfirmationNumber" class="container__ordernumber"></p>
-        <p class="container__date">2022-12-19 21.14</p>
-        <p class="container__delivery">Snabbleverans Postnord</p>
-        <p class="container__payment-method">Betalkort</p>
-      </div>
-    </div>
+
+    <button type="button" id="emptyCart">Rensa varukorg</button>
+    <button id="pay">Betala</button>
     <div id="root"></div>
   </body>
 </html>

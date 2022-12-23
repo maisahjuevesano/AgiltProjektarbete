@@ -1,4 +1,4 @@
-import { Product } from "./models/Products";
+import { Product } from "./models/Productss";
 
 console.log("Testar");
 
