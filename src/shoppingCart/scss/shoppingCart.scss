@@ -23,5 +23,9 @@
     @include c.small {
       width: 20vw;
     }
+
+    @include c.medium {
+      width: 10vw;
+    }
   }
 }
