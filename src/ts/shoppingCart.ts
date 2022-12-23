@@ -23,8 +23,6 @@ function emptyShoppingCart(cartProducts: Product[]) {
   rootDiv.innerHTML = "";
 }
 
-//hama och maisah
-
 let orderContainer: HTMLParagraphElement = document.getElementById(
   "container__ordernumber"
 ) as HTMLParagraphElement;
@@ -32,8 +30,6 @@ let orderContainer: HTMLParagraphElement = document.getElementById(
 let pay: HTMLButtonElement = document.getElementById(
   "pay"
 ) as HTMLButtonElement;
-
-//funktion till betala knappen så man kommer till orderConfirmation.html
 
 pay.addEventListener("click", () => {
   window.location.href = "../../orderConfirmation/orderConfirmation.html";
