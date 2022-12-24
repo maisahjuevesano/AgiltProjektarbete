@@ -70,16 +70,9 @@ const showShoppingCart = (cartProducts: Product[]) => {
       let amountText = cartProducts[i].amount.toString();
       articleAmount.innerHTML = amountText + " st";
 
-<<<<<<< HEAD
-    let articlePrice: HTMLParagraphElement = document.createElement("p");
-    let priceText = cartProducts[i].price.toString();
-    articlePrice.innerHTML = priceText + " kr";
-    // console.log(priceText);
-=======
       let articlePrice: HTMLParagraphElement = document.createElement("p");
       let priceText = cartProducts[i].price.toString();
       articlePrice.innerHTML = priceText + " kr";
->>>>>>> e286e32a82a04fe282d57887dccc681f28cfc642
 
       cartArticle.appendChild(articleImg);
       cartArticle.appendChild(articleTitle);
