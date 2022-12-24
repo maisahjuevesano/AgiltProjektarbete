@@ -6,6 +6,7 @@ console.log("Testar");
 
 window.onload = function () {
   createHtml();
+  console.log("test");
 };
 
 export let products = [
