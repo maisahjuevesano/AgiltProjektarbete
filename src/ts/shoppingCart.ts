@@ -35,25 +35,6 @@ pay.addEventListener("click", () => {
   window.location.href = "../../orderConfirmation/orderConfirmation.html";
 });
 
-// pay.addEventListener("click", () => {
-//   let orderNumber: number = Math.floor(Math.random() * 999999 + 111111);
-//   console.log(orderNumber);
-
-//   let orderNumberText: string = orderNumber.toString();
-//   console.log(orderNumberText);
-//   orderContainer.innerHTML = orderNumberText;
-
-//   orderNumberEvent(orderNumberText);
-// });
-
-// function orderNumberEvent(orderNumberText: string) {
-//   let orderNumberContainer: HTMLDivElement = document.createElement("div");
-
-//   orderNumberContainer.innerHTML;
-// }
-
-// console.log(pay);
-
 const showShoppingCart = (cartProducts: Product[]) => {
   for (let i = 0; i < cartProducts.length; i++) {
     let cartArticle: HTMLDivElement = document.createElement("div");
@@ -72,6 +53,7 @@ const showShoppingCart = (cartProducts: Product[]) => {
     let articlePrice: HTMLParagraphElement = document.createElement("p");
     let priceText = cartProducts[i].price.toString();
     articlePrice.innerHTML = priceText + " kr";
+    // console.log(priceText);
 
     cartArticle.appendChild(articleImg);
     cartArticle.appendChild(articleTitle);
