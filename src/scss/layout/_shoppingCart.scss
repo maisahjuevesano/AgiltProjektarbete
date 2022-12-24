@@ -5,13 +5,13 @@
   flex-direction: column;
 
   .article--container {
+    width: 80vw;
     display: flex;
     flex-direction: column;
     // flex-wrap: wrap;
     align-items: center;
     // border: 2px solid gray;
     border-bottom: 1px solid lightgrey;
-    width: 90%;
 
     @include c.small {
       flex-direction: row;
