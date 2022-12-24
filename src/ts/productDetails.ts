@@ -11,14 +11,14 @@ function getProductDetailsFromLs() {
   let productDetails: Product = JSON.parse(
     localStorage.getItem("productDetails") || "[]"
   );
-  console.log(productDetails);
+  console.log("Du har klickat på: ", productDetails);
   //   productsToShow.push(productDetails)
   showDescription(productDetails);
 }
 
 export const showDescription = (product: Product) => {
   let rootDiv: HTMLDivElement = document.getElementById(
-    "root"
+    "productDetailRoot"
   ) as HTMLDivElement;
 
   let picture: HTMLImageElement = document.createElement("img");
@@ -44,6 +44,14 @@ export const showDescription = (product: Product) => {
   addToCart.id = "addCart";
   addToCart.innerHTML = `<i class="fas fa-cart-plus"></i>`;
 
+  let goBackBtn: HTMLButtonElement = document.createElement("button");
+  goBackBtn.type = "button";
+  goBackBtn.innerHTML = "Tillbaka till föregående sida";
+  goBackBtn.addEventListener("click", () => {
+    history.back();
+  });
+
+  rootDiv.appendChild(goBackBtn);
   rootDiv.appendChild(picture);
   rootDiv.appendChild(title);
   rootDiv.appendChild(productDescription);

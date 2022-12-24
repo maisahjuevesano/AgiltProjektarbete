@@ -3,26 +3,36 @@
 body {
   background-color: rgb(255, 255, 255);
 
-  #root {
+  #productDetailRoot {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    h2 {
+      text-align: center;
+    }
+
     img {
-      width: 80vw;
+      width: 70vw;
 
       @include c.small {
         width: 40vw;
       }
     }
 
+    p,
+    span {
+      padding: 5%;
+    }
+
     .addToCart {
-      display: block;
-      background-color: rgba(14, 47, 117, 0.926);
+      background-color: rgb(109, 49, 49);
+      // background-color: rgba(14, 47, 117, 0.926);
       // font-size: 15pt;
+      width: 16%;
       color: white;
-      padding: 11%;
+      padding: 5%;
       margin: 2%;
       border-radius: 2px;
       display: flex;
