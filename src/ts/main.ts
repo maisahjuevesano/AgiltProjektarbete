@@ -1,12 +1,17 @@
 // import { prova } from "../productDetail/ts/productDetails";
 // import { provaLite } from "../productDetail/ts/productDetails";
+import {
+  showAllProducts,
+  showFryingPans,
+  showKnives,
+  showSaucePans,
+} from "./functions";
 import { Product } from "./models/Products";
 
-console.log("Testar");
-
 window.onload = function () {
-  createHtml();
-  console.log("test");
+  createHtml(products);
+  showAllProducts();
+  addFilterFunctionality();
 };
 
 export let products = [
@@ -134,8 +139,12 @@ Satake
 Jamie Oliver
 Lodge
 ********************************/
-function createHtml() {
-  console.log(cartProducts); //visar alla produkter i ens varukorg
+export function createHtml(products: Product[]) {
+  console.log("Varukorg: ", cartProducts); //visar alla produkter i ens varukorg
+  let rootContainer: HTMLDivElement = document.getElementById(
+    "root"
+  ) as HTMLDivElement;
+  rootContainer.innerHTML = "";
 
   for (let i = 0; i < products.length; i++) {
     let objectContainer: HTMLDivElement = document.createElement("div");
@@ -164,10 +173,6 @@ function createHtml() {
     addToCartBtn.className = "addToCart";
     addToCartBtn.id = "addCart";
     addToCartBtn.innerHTML = `<i class="fas fa-cart-plus"></i>`;
-
-    let rootContainer: HTMLDivElement = document.getElementById(
-      "root"
-    ) as HTMLDivElement;
 
     clickableContainer.appendChild(picture);
     clickableContainer.appendChild(title);
@@ -199,8 +204,20 @@ function createHtml() {
 export function handleClick(product: Product) {
   cartProducts.push(product);
   localStorage.setItem("storageList", JSON.stringify(cartProducts));
-  console.log(cartProducts);
+  console.log("Varukorg: ", cartProducts);
 }
+
+export function addFilterFunctionality() {
+  document
+    .getElementById("saucePans")
+    ?.addEventListener("click", showSaucePans);
+  document
+    .getElementById("fryingPans")
+    ?.addEventListener("click", showFryingPans);
+  document.getElementById("knives")?.addEventListener("click", showKnives);
+}
+
+/******************************* */
 
 function sendProductDetailsToLs(product: Product) {
   localStorage.setItem("productDetails", JSON.stringify(product));

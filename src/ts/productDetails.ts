@@ -1,5 +1,3 @@
-import { cartProducts } from "./main"; //behövs denna?
-
 import { Product } from "./models/Products";
 
 window.onload = function () {
@@ -58,6 +56,4 @@ export const showDescription = (product: Product) => {
   rootDiv.appendChild(productBrand);
   rootDiv.appendChild(priceTag);
   rootDiv.appendChild(addToCart);
-
-  // addToCart.addEventListener("click", () => {});
 };
