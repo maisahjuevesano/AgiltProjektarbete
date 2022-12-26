@@ -1,7 +1,7 @@
 import { Product } from "./models/Products";
 let rootDiv: HTMLDivElement = document.getElementById("root") as HTMLDivElement;
 let cartProducts: Product[] = JSON.parse(
-  localStorage.getItem("storageList") || "[]"
+  localStorage.getItem("cartList") || "[]"
 );
 
 window.onload = function () {
@@ -18,7 +18,7 @@ window.onload = function () {
 function emptyShoppingCart(cartProducts: Product[]) {
   cartProducts.splice(0, cartProducts.length);
   //   localStorage.clear();
-  localStorage.setItem("storageList", JSON.stringify(cartProducts));
+  localStorage.setItem("cartList", JSON.stringify(cartProducts));
   console.log(cartProducts);
   rootDiv.innerHTML = "";
   showShoppingCart(cartProducts);
@@ -49,6 +49,7 @@ function handlePayClick() {
 }
 
 const showShoppingCart = (cartProducts: Product[]) => {
+  rootDiv.innerHTML = "";
   if (cartProducts.length === 0) {
     let emptyText: HTMLHeadingElement = document.createElement("h3");
     emptyText.innerHTML = "Din varukorg är tom!";
@@ -74,11 +75,23 @@ const showShoppingCart = (cartProducts: Product[]) => {
       let priceText = cartProducts[i].price.toString();
       articlePrice.innerHTML = priceText + " kr";
 
+      let removeArticle: HTMLSpanElement = document.createElement("span");
+      removeArticle.className = "delete--article";
+      removeArticle.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+
+      removeArticle.addEventListener("click", () => {
+        let index = cartProducts.indexOf(cartProducts[i]);
+        cartProducts.splice(index, 1);
+        console.log("Ny varukorg: ", cartProducts);
+        localStorage.setItem("cartList", JSON.stringify(cartProducts));
+        showShoppingCart(cartProducts);
+      });
+
       cartArticle.appendChild(articleImg);
       cartArticle.appendChild(articleTitle);
       cartArticle.appendChild(articleAmount);
       cartArticle.appendChild(articlePrice);
-
+      cartArticle.appendChild(removeArticle);
       rootDiv.appendChild(cartArticle);
     }
   }

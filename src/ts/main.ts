@@ -126,7 +126,7 @@ export let products = [
 ];
 
 export let cartProducts: Product[] = JSON.parse(
-  localStorage.getItem("storageList") || "[]"
+  localStorage.getItem("cartList") || "[]"
 );
 
 /************************** 
@@ -203,7 +203,7 @@ export function createHtml(products: Product[]) {
 
 export function handleClick(product: Product) {
   cartProducts.push(product);
-  localStorage.setItem("storageList", JSON.stringify(cartProducts));
+  localStorage.setItem("cartList", JSON.stringify(cartProducts));
   console.log("Varukorg: ", cartProducts);
 }
 

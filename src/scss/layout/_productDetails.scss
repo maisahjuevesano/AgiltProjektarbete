@@ -8,6 +8,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 15%;
 
     h2 {
       text-align: center;
@@ -22,23 +23,25 @@ body {
     }
 
     p,
-    span {
+    span,
+    h3 {
       padding: 5%;
+      margin: 0;
     }
 
-    .addToCart {
-      background-color: rgb(109, 49, 49);
-      // background-color: rgba(14, 47, 117, 0.926);
-      // font-size: 15pt;
-      width: 16%;
-      color: white;
-      padding: 5%;
-      margin: 2%;
-      border-radius: 2px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+    // .addToCart {
+    //   background-color: rgb(109, 49, 49);
+    //   // background-color: rgba(14, 47, 117, 0.926);
+    //   // font-size: 15pt;
+    //   width: 16%;
+    //   color: white;
+    //   padding: 5%;
+    //   margin: 2%;
+    //   border-radius: 2px;
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    //   align-items: center;
+    // }
   }
 }
