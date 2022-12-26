@@ -37,10 +37,10 @@ export const showDescription = (product: Product) => {
   let priceText = price.toString();
   priceTag.innerHTML = priceText + "kr";
 
-  let addToCart: HTMLSpanElement = document.createElement("span");
-  addToCart.className = "addToCart";
-  addToCart.id = "addCart";
-  addToCart.innerHTML = `<i class="fas fa-cart-plus"></i>`;
+  // let addToCart: HTMLSpanElement = document.createElement("span");
+  // addToCart.className = "addToCart";
+  // addToCart.id = "addCart";
+  // addToCart.innerHTML = `<i class="fas fa-cart-plus"></i>`;
 
   let goBackBtn: HTMLButtonElement = document.createElement("button");
   goBackBtn.type = "button";
@@ -55,5 +55,5 @@ export const showDescription = (product: Product) => {
   rootDiv.appendChild(productDescription);
   rootDiv.appendChild(productBrand);
   rootDiv.appendChild(priceTag);
-  rootDiv.appendChild(addToCart);
+  // rootDiv.appendChild(addToCart);
 };
