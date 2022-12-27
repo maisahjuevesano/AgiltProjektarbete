@@ -1,3 +1,4 @@
+// import { stringify } from "querystring";
 import { products } from "./main";
 import { Product } from "./models/Products";
 //import { articlePrice } from "../ts/products";
@@ -9,6 +10,7 @@ let cartProducts: Product[] = JSON.parse(
 window.onload = function () {
   totalAmount(cartProducts);
   startUp();
+  //itemList(cartProducts,products);
   showShoppingCart(cartProducts);
   console.log(cartProducts);
 
@@ -104,12 +106,22 @@ const totalAmount = (articlePrice: Product[]) => {
   let sum: number = 0;
 
   for (let i = 0; i < articlePrice.length; i++) {
-    sum += articlePrice[i].price;
+    let container: HTMLDivElement = document.createElement("div");
+    let motherContainer: HTMLDivElement = document.getElementById(
+      "root_sum"
+    ) as HTMLDivElement;
+    let sumString: string = sum.toString();
+    container.innerHTML = sumString;
+    motherContainer.appendChild(container);
+
+    sum += articlePrice[i].price * articlePrice[i].amount;
   }
   console.log(sum);
   return sum;
 };
 
-//console.log(totalAmount);
+//let displaySum: HTMLDivElement = document.createElement("div");
+//displaySum.innerHTML = totalAmount + "kr";
 
-//den lyckas inte få in data från listan
+// let displaySum = document.getElementById("root_sum") as HTMLDivElement;
+// displaySum.innerHTML = totalAmount + "kr";

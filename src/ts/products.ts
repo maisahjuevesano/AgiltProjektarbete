@@ -7,7 +7,7 @@ window.onload = function () {
   createHtml();
 };
 
-let products = [
+export let products = [
   new Product(
     "Tefal Jamie Oliver Cook's classic",
     680,
