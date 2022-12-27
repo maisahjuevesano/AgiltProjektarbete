@@ -1,6 +1,7 @@
 import { Product } from "./models/Products";
 
 window.onload = function () {
+  goToShoppingCart();
   console.log("tjo");
   getProductDetailsFromLs();
 };
@@ -57,3 +58,14 @@ export const showDescription = (product: Product) => {
   rootDiv.appendChild(priceTag);
   // rootDiv.appendChild(addToCart);
 };
+
+//verkar ej funka kika på sen
+function goToShoppingCart() {
+  let cartSymbol: HTMLAnchorElement = document.getElementById(
+    "cart"
+  ) as HTMLAnchorElement;
+
+  cartSymbol.addEventListener("click", () => {
+    window.location.href = "pages/shoppingCart.html";
+  });
+}
