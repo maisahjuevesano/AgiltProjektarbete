@@ -7,6 +7,7 @@ import {
   showSaucePans,
 } from "./functions";
 import { Product } from "./models/Products";
+// import { SelectedProduct } from "./models/SelectedProducts";
 
 window.onload = function () {
   createHtml(products);
@@ -16,6 +17,7 @@ window.onload = function () {
 
 export let products = [
   new Product(
+    1,
     "Tefal Jamie Oliver Cook's classic",
     680,
     "https://static.goshopping.dk/products/2000/tefal-jamie-oliver-cook-s-classic-stegepande-e3060734-47447-1.jpg",
@@ -25,6 +27,7 @@ export let products = [
     "Stekpanna"
   ),
   new Product(
+    2,
     "Lodge stekpanna i gjutjärn, liten",
     330,
     "https://static.goshopping.dk/products/2000/stegepande-af-stoebejern-16-5-cm-h3sk-42134-1.jpg",
@@ -34,6 +37,7 @@ export let products = [
     "Stekpanna"
   ),
   new Product(
+    3,
     "Ronneby Bruk Koppar Stekpanna",
     1665,
     "https://static.goshopping.dk/products/2000/ronneby-bruk-stekpanna-koppar-94720-27058-1.jpg",
@@ -43,6 +47,7 @@ export let products = [
     "Stekpanna"
   ),
   new Product(
+    4,
     "Satake Stekpanna Lättviktsgjutjär",
     729,
     "https://static.goshopping.dk/products/2000/satake-stegepande-i-letvaegts-stoebejern-spanna30-45462-1.jpg",
@@ -52,6 +57,7 @@ export let products = [
     "Stekpanna"
   ),
   new Product(
+    5,
     "Fiskars Hard Face pannkakspanna",
     479,
     "https://static.goshopping.dk/products/2000/fiskars-hard-face-pandekagepande-1052229-41932-1.jpg",
@@ -61,6 +67,7 @@ export let products = [
     "Stekpanna"
   ),
   new Product(
+    6,
     "Global G-55 kockkniv, 18cm",
     1000,
     "https://static.goshopping.dk/products/2000/global-g-55-kokkekniv-g-55-24334-1.jpg",
@@ -70,6 +77,7 @@ export let products = [
     "Kniv"
   ),
   new Product(
+    7,
     "Global G-29 Kött/fiskkniv, 18cm",
     2000,
     "https://static.goshopping.dk/products/2000/global-g-29-kniv-18-cm-g-29-6437-1.jpg",
@@ -79,6 +87,7 @@ export let products = [
     "Kniv"
   ),
   new Product(
+    8,
     "Jamie Oliver Santokukniv, 16cm",
     609,
     "https://static.goshopping.dk/products/2000/jamie-oliver-santokukniv-16-5-cm-k2671555-53446-1.jpg",
@@ -88,6 +97,7 @@ export let products = [
     "Kniv"
   ),
   new Product(
+    9,
     "Satake Houcho Köttkniv, 17 cm",
     329,
     "https://static.goshopping.dk/products/2000/satake-koedkniv-svk009-17979-1.jpg",
@@ -97,6 +107,7 @@ export let products = [
     "Kniv"
   ),
   new Product(
+    10,
     "Fiskars Titanium Santokukniv, 16 cm",
     1099,
     "https://static.goshopping.dk/products/2000/fiskars-titanium-santokukniv-16-cm-1027295-34933-1.jpg",
@@ -106,6 +117,7 @@ export let products = [
     "Kniv"
   ),
   new Product(
+    11,
     "Ronneby Bruk Lätt Gjutjärn Såskastrull",
     855,
     "https://static.goshopping.dk/products/2000/ronneby-bruk-laett-gjutjaern-saaskastrull-med-100080-27053-1.jpg",
@@ -115,6 +127,7 @@ export let products = [
     "Kastrull"
   ),
   new Product(
+    12,
     "Fiskars Norden kastrull, rostfritt",
     1699,
     "https://static.goshopping.dk/products/2000/fiskars-norden-kastrull-rostfritt-staal-1026909-34921-1.jpg",
@@ -197,6 +210,10 @@ export function createHtml(products: Product[]) {
 
     addToCartBtn.addEventListener("click", () => {
       handleClick(products[i]);
+      /*maisah lägger till så den anropas & skriva paramatern men först
+      måste jag skapa variablar tex let selectedAomunt = 
+      */
+      // newProductObject();
     });
   }
 }
@@ -207,6 +224,7 @@ export function handleClick(product: Product) {
   cartProducts.push(product);
   localStorage.setItem("cartList", JSON.stringify(cartProducts));
   console.log("Varukorg: ", cartProducts);
+  //testar att få bort dubletten
 }
 
 //lägger till
@@ -226,3 +244,28 @@ export function addFilterFunctionality() {
 function sendProductDetailsToLs(product: Product) {
   localStorage.setItem("productDetails", JSON.stringify(product));
 }
+
+//Maisah ska skapa funktion så det inte blir dubletter när man lägger till fler av samma produkt
+//funktionen
+// function newProductObject(
+//   id,
+//   name: string,
+//   price: number,
+//   imageUrl: string,
+//   brand: string,
+//   amount: number,
+//   description: string,
+//   category: string
+// ) {
+//   let selectedProduct = new Product(
+//     id,
+//     name,
+//     price,
+//     imageUrl,
+//     brand,
+//     amount,
+//     description,
+//     category
+//   );
+//   cartProducts.push(selectedProduct);
+// }
