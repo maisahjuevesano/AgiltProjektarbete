@@ -49,3 +49,11 @@ button#pay {
     padding: 0;
   }
 }
+
+.amountContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5px;
+}

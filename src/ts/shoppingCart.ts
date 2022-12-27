@@ -51,7 +51,7 @@ function handlePayClick() {
   }
 }
 
-const showShoppingCart = (cartProducts: Product[]) => {
+export const showShoppingCart = (cartProducts: Product[]) => {
   rootDiv.innerHTML = "";
   if (cartProducts.length === 0) {
     let emptyText: HTMLHeadingElement = document.createElement("h3");
@@ -59,6 +59,18 @@ const showShoppingCart = (cartProducts: Product[]) => {
     rootDiv.appendChild(emptyText);
   } else {
     for (let i = 0; i < cartProducts.length; i++) {
+      //för mina knappar
+      let amountContainer: HTMLDivElement = document.createElement("div");
+      let amountNumber: HTMLParagraphElement = document.createElement("p");
+      let addIcon: HTMLDivElement = document.createElement("div");
+      let subIcon: HTMLDivElement = document.createElement("div");
+
+      //klasser så jag kan styla
+      amountContainer.classList.add("amountContainer");
+      amountNumber.classList.add("amountContainer__number");
+      addIcon.classList.add("amountContainer__addIcon");
+      subIcon.classList.add("amountContainer__subIcon");
+
       let cartArticle: HTMLDivElement = document.createElement("div");
       cartArticle.className = "article--container";
 
@@ -70,9 +82,9 @@ const showShoppingCart = (cartProducts: Product[]) => {
       let articleTitle: HTMLParagraphElement = document.createElement("p");
       articleTitle.innerHTML = cartProducts[i].name;
 
-      let articleAmount: HTMLParagraphElement = document.createElement("p");
-      let amountText = cartProducts[i].amount.toString();
-      articleAmount.innerHTML = amountText + " st";
+      // let articleAmount: HTMLParagraphElement = document.createElement("p");
+      // let amountText = cartProducts[i].amount.toString();
+      // articleAmount.innerHTML = amountText + " st";
 
       let articlePrice: HTMLParagraphElement = document.createElement("p");
       let priceText = cartProducts[i].price.toString();
@@ -81,6 +93,40 @@ const showShoppingCart = (cartProducts: Product[]) => {
       let removeArticle: HTMLSpanElement = document.createElement("span");
       removeArticle.className = "delete--article";
       removeArticle.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+
+      let selectedAmount = cartProducts[i].amount;
+      let selectedAmountText = selectedAmount.toString();
+
+      addIcon.addEventListener("click", () => {
+        selectedAmount++;
+        console.log(selectedAmount);
+        selectedAmountText = selectedAmount.toString();
+        amountNumber.innerHTML = `${selectedAmountText} st`;
+        cartProducts[i].amount++;
+        newAmountOfProducts(cartProducts);
+      });
+
+      subIcon.addEventListener("click", () => {
+        selectedAmount--;
+        selectedAmountText = selectedAmount.toString();
+        amountNumber.innerHTML = `${selectedAmountText} st`;
+        if (cartProducts[i].amount >= 1) {
+          cartProducts[i].amount--;
+          newAmountOfProducts(cartProducts);
+        }
+        if (selectedAmount < 1) {
+          let index = cartProducts.indexOf(cartProducts[i]);
+          cartProducts.splice(index, 1);
+          console.log("Ny varukorg: ", cartProducts);
+          localStorage.setItem("cartList", JSON.stringify(cartProducts));
+          showShoppingCart(cartProducts);
+        }
+        console.log(selectedAmount);
+      });
+
+      addIcon.innerHTML = `<i class="fa-solid fa-circle-plus"></i>`;
+      amountNumber.innerHTML = `${selectedAmountText} st`;
+      subIcon.innerHTML = `<i class="fa-solid fa-circle-minus"></i>`;
 
       removeArticle.addEventListener("click", () => {
         let index = cartProducts.indexOf(cartProducts[i]);
@@ -92,8 +138,12 @@ const showShoppingCart = (cartProducts: Product[]) => {
 
       cartArticle.appendChild(articleImg);
       cartArticle.appendChild(articleTitle);
-      cartArticle.appendChild(articleAmount);
+      // cartArticle.appendChild(articleAmount);
       cartArticle.appendChild(articlePrice);
+      cartArticle.appendChild(amountContainer);
+      amountContainer.appendChild(subIcon);
+      amountContainer.appendChild(amountNumber);
+      amountContainer.appendChild(addIcon);
       cartArticle.appendChild(removeArticle);
       rootDiv.appendChild(cartArticle);
     }
@@ -113,3 +163,7 @@ const totalAmount = (articlePrice: Product[]) => {
 //console.log(totalAmount);
 
 //den lyckas inte få in data från listan
+
+function newAmountOfProducts(cartProducts: Product[]) {
+  localStorage.setItem("cartList", JSON.stringify(cartProducts));
+}
