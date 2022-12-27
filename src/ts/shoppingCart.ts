@@ -169,6 +169,9 @@ const totalAmount = (articlePrice: Product[]) => {
   console.log(sum);
   return sum;
 };
+function newAmountOfProducts(cartProducts: Product[]) {
+  localStorage.setItem("cartList", JSON.stringify(cartProducts));
+}
 
 //let displaySum: HTMLDivElement = document.createElement("div");
 //displaySum.innerHTML = totalAmount + "kr";
