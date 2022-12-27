@@ -1,10 +1,13 @@
+import { products } from "./main";
 import { Product } from "./models/Products";
+//import { articlePrice } from "../ts/products";
 let rootDiv: HTMLDivElement = document.getElementById("root") as HTMLDivElement;
 let cartProducts: Product[] = JSON.parse(
   localStorage.getItem("cartList") || "[]"
 );
 
 window.onload = function () {
+  totalAmount(cartProducts);
   startUp();
   showShoppingCart(cartProducts);
   console.log(cartProducts);
@@ -96,3 +99,17 @@ const showShoppingCart = (cartProducts: Product[]) => {
     }
   }
 };
+
+const totalAmount = (articlePrice: Product[]) => {
+  let sum: number = 0;
+
+  for (let i = 0; i < articlePrice.length; i++) {
+    sum += articlePrice[i].price;
+  }
+  console.log(sum);
+  return sum;
+};
+
+//console.log(totalAmount);
+
+//den lyckas inte få in data från listan

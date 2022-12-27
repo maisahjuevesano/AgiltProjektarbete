@@ -1,3 +1,4 @@
+//import { json } from "stream/consumers";
 import { Product } from "./models/Productss";
 
 console.log("Testar");
@@ -92,8 +93,13 @@ let products = [
     1
   ),
 ];
+/*export let articlePrice: Product[] = JSON.parse(
+  localStorage.getItem("storageList") || "[]"
 
-//
+);
+*/
+//funkar inte att exportera priset, kanske gör något fel!!!
+
 function createHtml() {
   for (let i = 0; i < products.length; i++) {
     let objectContainer: HTMLDivElement = document.createElement("div");
