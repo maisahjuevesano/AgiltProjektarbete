@@ -66,6 +66,6 @@ function goToShoppingCart() {
   ) as HTMLAnchorElement;
 
   cartSymbol.addEventListener("click", () => {
-    window.location.href = "pages/shoppingCart.html";
+    window.location.href = "shoppingCart.html";
   });
 }
