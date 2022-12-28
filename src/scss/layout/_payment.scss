@@ -1,0 +1,39 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__paymentoptions-radiobuttons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__icons {
+    text-align: center;
+  }
+
+  &__paymentcard {
+    display: flex;
+    flex-direction: column;
+    width: 175px;
+  }
+
+  &__buttoncontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+  }
+}

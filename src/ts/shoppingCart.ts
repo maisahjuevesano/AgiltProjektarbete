@@ -18,6 +18,7 @@ window.onload = function () {
   let emptyBtn = document.getElementById("emptyCart") as HTMLButtonElement;
   emptyBtn.addEventListener("click", () => {
     emptyShoppingCart(cartProducts);
+    totalAmount(cartProducts);
   });
 };
 
@@ -45,14 +46,17 @@ function startUp() {
   });
 }
 
+//denna ska länkas till payment.html
 function handlePayClick() {
   if (cartProducts.length !== 0) {
-    window.location.href = "../pages/orderConfirmation.html";
+    // window.location.href = "../pages/orderConfirmation.html";
+    window.location.href = "../pages/payment.html";
     emptyShoppingCart(cartProducts);
   } else {
     alert("Ojdå! Ser ut som att din varukorg är tom!");
   }
 }
+
 //test 1
 export function noDouble() {
   for (let i = 0; i < cartProducts.length; i++) {
