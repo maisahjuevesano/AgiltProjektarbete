@@ -28,6 +28,7 @@ function emptyShoppingCart(cartProducts: Product[]) {
   console.log(cartProducts);
   rootDiv.innerHTML = "";
   showShoppingCart(cartProducts);
+  totalAmount(cartProducts);
 }
 
 function startUp() {
@@ -37,6 +38,7 @@ function startUp() {
 
   pay.addEventListener("click", () => {
     handlePayClick();
+    //showShoppingCart(cartProducts);
   });
 }
 
@@ -58,7 +60,7 @@ export function noDouble() {
       if (i !== x) {
         if (cartProducts[i].id === cartProducts[x].id) {
           cartProducts.splice(x, 1);
-          cartProducts[i].amount++;
+          cartProducts[x].amount++;
           newAmountOfProducts(cartProducts);
         }
       }
