@@ -31,11 +31,6 @@ function emptyShoppingCart(cartProducts: Product[]) {
 }
 
 function startUp() {
-  let orderContainer: HTMLParagraphElement = document.getElementById(
-    "container__ordernumber"
-  ) as HTMLParagraphElement;
-  //behövs detta?? ^^
-
   let pay: HTMLButtonElement = document.getElementById(
     "pay"
   ) as HTMLButtonElement;
@@ -56,7 +51,7 @@ function handlePayClick() {
 //test 1
 export function noDouble() {
   for (let i = 0; i < cartProducts.length; i++) {
-    let selectedAmount = cartProducts[i].amount;
+    // let selectedAmount = cartProducts[i].amount;
     // let selectedAmountText = selectedAmount.toString();
 
     for (let x = 0; x < cartProducts.length; ++x) {
@@ -160,6 +155,7 @@ export const showShoppingCart = (cartProducts: Product[]) => {
         cartProducts.splice(index, 1);
         console.log("Ny varukorg: ", cartProducts);
         localStorage.setItem("cartList", JSON.stringify(cartProducts));
+        totalAmount(cartProducts);
         showShoppingCart(cartProducts);
       });
 
