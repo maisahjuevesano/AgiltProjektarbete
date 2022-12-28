@@ -29,20 +29,17 @@ function emptyShoppingCart(cartProducts: Product[]) {
   console.log(cartProducts);
   rootDiv.innerHTML = "";
   showShoppingCart(cartProducts);
+  totalAmount(cartProducts);
 }
 
 function startUp() {
-  let orderContainer: HTMLParagraphElement = document.getElementById(
-    "container__ordernumber"
-  ) as HTMLParagraphElement;
-  //behövs detta?? ^^
-
   let pay: HTMLButtonElement = document.getElementById(
     "pay"
   ) as HTMLButtonElement;
 
   pay.addEventListener("click", () => {
     handlePayClick();
+    //showShoppingCart(cartProducts);
   });
 }
 
@@ -60,14 +57,14 @@ function handlePayClick() {
 //test 1
 export function noDouble() {
   for (let i = 0; i < cartProducts.length; i++) {
-    let selectedAmount = cartProducts[i].amount;
+    // let selectedAmount = cartProducts[i].amount;
     // let selectedAmountText = selectedAmount.toString();
 
     for (let x = 0; x < cartProducts.length; ++x) {
       if (i !== x) {
         if (cartProducts[i].id === cartProducts[x].id) {
           cartProducts.splice(x, 1);
-          cartProducts[i].amount++;
+          cartProducts[x].amount++;
           newAmountOfProducts(cartProducts);
         }
       }
@@ -164,6 +161,7 @@ export const showShoppingCart = (cartProducts: Product[]) => {
         cartProducts.splice(index, 1);
         console.log("Ny varukorg: ", cartProducts);
         localStorage.setItem("cartList", JSON.stringify(cartProducts));
+        totalAmount(cartProducts);
         showShoppingCart(cartProducts);
       });
 

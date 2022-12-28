@@ -1,5 +1,6 @@
-import { createHtml, products } from "./main";
+import { createHtml } from "./main";
 import { Product } from "./models/Products";
+import { products } from "./services/getData";
 
 /****************************** */
 export const showAllProducts = () => {
@@ -19,6 +20,11 @@ export const showKnives = () => {
   });
   knives = results;
   console.log("Knivar i lista: ", knives);
+  // window.location.href = "index.html";
+  let rootContainer: HTMLDivElement = document.getElementById(
+    "root"
+  ) as HTMLDivElement;
+  rootContainer.innerHTML = "";
   createHtml(knives);
 };
 
@@ -30,6 +36,10 @@ export const showFryingPans = () => {
   });
   fryingPans = results;
   console.log("Stekpannor i lista: ", fryingPans);
+  let rootContainer: HTMLDivElement = document.getElementById(
+    "root"
+  ) as HTMLDivElement;
+  rootContainer.innerHTML = "";
   createHtml(fryingPans);
 };
 
