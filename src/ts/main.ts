@@ -7,6 +7,9 @@ import {
   showSaucePans,
 } from "./functions";
 import { Product } from "./models/Products";
+import { SelectedCartItem } from "./models/SelectedCartItem";
+import { noDouble, showShoppingCart } from "./shoppingCart";
+
 // import { SelectedProduct } from "./models/SelectedProducts";
 
 window.onload = function () {
@@ -198,6 +201,7 @@ export function createHtml(products: Product[]) {
     clickableContainer.addEventListener("click", () => {
       window.location.href = "pages/productDetails.html";
       sendProductDetailsToLs(products[i]);
+      // noDouble();
     });
 
     let cartSymbol: HTMLAnchorElement = document.getElementById(
@@ -210,10 +214,8 @@ export function createHtml(products: Product[]) {
 
     addToCartBtn.addEventListener("click", () => {
       handleClick(products[i]);
-      /*maisah lägger till så den anropas & skriva paramatern men först
-      måste jag skapa variablar tex let selectedAomunt = 
-      */
-      // newProductObject();
+      console.log("Varukorg: ", cartProducts);
+      // noDouble();
     });
   }
 }
@@ -223,11 +225,9 @@ export function createHtml(products: Product[]) {
 export function handleClick(product: Product) {
   cartProducts.push(product);
   localStorage.setItem("cartList", JSON.stringify(cartProducts));
-  console.log("Varukorg: ", cartProducts);
-  //testar att få bort dubletten
+  // console.log("Varukorg: ", cartProducts);
+  // noDouble();
 }
-
-//lägger till
 
 export function addFilterFunctionality() {
   document
@@ -244,28 +244,3 @@ export function addFilterFunctionality() {
 function sendProductDetailsToLs(product: Product) {
   localStorage.setItem("productDetails", JSON.stringify(product));
 }
-
-//Maisah ska skapa funktion så det inte blir dubletter när man lägger till fler av samma produkt
-//funktionen
-// function newProductObject(
-//   id,
-//   name: string,
-//   price: number,
-//   imageUrl: string,
-//   brand: string,
-//   amount: number,
-//   description: string,
-//   category: string
-// ) {
-//   let selectedProduct = new Product(
-//     id,
-//     name,
-//     price,
-//     imageUrl,
-//     brand,
-//     amount,
-//     description,
-//     category
-//   );
-//   cartProducts.push(selectedProduct);
-// }

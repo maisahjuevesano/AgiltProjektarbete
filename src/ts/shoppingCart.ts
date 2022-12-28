@@ -1,5 +1,5 @@
 // import { stringify } from "querystring";
-import { products } from "./main";
+// import { noDouble, products } from "./main";
 import { Product } from "./models/Products";
 //import { articlePrice } from "../ts/products";
 let rootDiv: HTMLDivElement = document.getElementById("root") as HTMLDivElement;
@@ -10,6 +10,7 @@ let cartProducts: Product[] = JSON.parse(
 window.onload = function () {
   totalAmount(cartProducts);
   startUp();
+  noDouble();
   //itemList(cartProducts,products);
   showShoppingCart(cartProducts);
   console.log(cartProducts);
@@ -52,8 +53,28 @@ function handlePayClick() {
     alert("Ojdå! Ser ut som att din varukorg är tom!");
   }
 }
+//test 1
+export function noDouble() {
+  for (let i = 0; i < cartProducts.length; i++) {
+    let selectedAmount = cartProducts[i].amount;
+    // let selectedAmountText = selectedAmount.toString();
+
+    for (let x = 0; x < cartProducts.length; ++x) {
+      if (i !== x) {
+        if (cartProducts[i].id === cartProducts[x].id) {
+          cartProducts.splice(x, 1);
+          cartProducts[i].amount++;
+          newAmountOfProducts(cartProducts);
+        }
+      }
+    }
+  }
+  console.log(cartProducts);
+}
 
 export const showShoppingCart = (cartProducts: Product[]) => {
+  // noDouble();
+
   rootDiv.innerHTML = "";
   if (cartProducts.length === 0) {
     let emptyText: HTMLHeadingElement = document.createElement("h3");
@@ -106,6 +127,8 @@ export const showShoppingCart = (cartProducts: Product[]) => {
         amountNumber.innerHTML = `${selectedAmountText} st`;
         cartProducts[i].amount++;
         newAmountOfProducts(cartProducts);
+        totalAmount(cartProducts);
+        console.log(cartProducts);
       });
 
       subIcon.addEventListener("click", () => {
@@ -124,6 +147,8 @@ export const showShoppingCart = (cartProducts: Product[]) => {
           showShoppingCart(cartProducts);
         }
         console.log(selectedAmount);
+        totalAmount(cartProducts);
+        console.log(cartProducts);
       });
 
       addIcon.innerHTML = `<i class="fa-solid fa-circle-plus"></i>`;
@@ -148,27 +173,31 @@ export const showShoppingCart = (cartProducts: Product[]) => {
       amountContainer.appendChild(addIcon);
       cartArticle.appendChild(removeArticle);
       rootDiv.appendChild(cartArticle);
+      // noDouble();
     }
   }
 };
 
 const totalAmount = (articlePrice: Product[]) => {
+  let container: HTMLDivElement = document.createElement("div");
+  let motherContainer: HTMLDivElement = document.getElementById(
+    "root_sum"
+  ) as HTMLDivElement;
   let sum: number = 0;
+  let sumText = "";
+  container.innerHTML = "";
+  motherContainer.innerHTML = "";
 
   for (let i = 0; i < articlePrice.length; i++) {
-    let container: HTMLDivElement = document.createElement("div");
-    let motherContainer: HTMLDivElement = document.getElementById(
-      "root_sum"
-    ) as HTMLDivElement;
-    let sumString: string = sum.toString();
-    container.innerHTML = sumString;
-    motherContainer.appendChild(container);
-
     sum += articlePrice[i].price * articlePrice[i].amount;
   }
+  sumText = sum.toString();
+  container.innerHTML = sumText;
+  motherContainer.appendChild(container);
   console.log(sum);
   return sum;
 };
+
 function newAmountOfProducts(cartProducts: Product[]) {
   localStorage.setItem("cartList", JSON.stringify(cartProducts));
 }
