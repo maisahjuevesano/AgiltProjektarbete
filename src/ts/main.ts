@@ -99,22 +99,6 @@ export function createHtml(products: Product[]) {
     });
   }
 }
-// function test() {
-//   for (let i = 0; i < cartProducts.length; i++) {
-//     let selectedAmount = cartProducts[i].amount;
-//     // let selectedAmountText = selectedAmount.toString();
-
-//     for (let x = 0; x < cartProducts.length; ++x) {
-//       if (i !== x) {
-//         if (cartProducts[i].id === cartProducts[x].id) {
-//           cartProducts.splice(x, 1);
-//           cartProducts[i].amount++;
-//           // newAmountOfProducts(cartProducts);
-//         }
-//       }
-//     }
-//   }
-// }
 
 // listan
 
