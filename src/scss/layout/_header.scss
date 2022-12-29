@@ -1,16 +1,13 @@
 @use "../components/" as c;
-nav {
-  // width: 100%;
-}
 
 .top-nav {
   margin-top: 0%;
-  // width: 100vw;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;
   // justify-content: space-between;
-  background-color: rgb(219, 219, 219);
+  background-color: rgb(174, 162, 152);
   color: c.$primaryColor;
   padding: 1em;
 
@@ -19,10 +16,9 @@ nav {
   }
 
   #logo {
-    width: 50vw;
+    // width: 50vw;
 
     @include c.small {
-      width: 35vw;
     }
   }
 }
@@ -35,8 +31,8 @@ nav {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
-  //   background-color: rgba(255, 255, 255, 0.1);
-  background-color: rgb(219, 219, 219);
+
+  background-color: rgb(174, 162, 152);
 
   &__link {
     color: c.$primaryColor;
