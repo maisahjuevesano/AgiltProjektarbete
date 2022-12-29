@@ -7,6 +7,16 @@ body {
   align-items: center;
   justify-content: center;
 
+  .aboutUsContainer__img {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .imgnow {
+    display: flex;
+    width: 100%;
+  }
+
   #root {
     margin: 0;
     padding: 2%;
@@ -27,6 +37,11 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
+      transition: all 0.25s ease-in-out;
+      &:hover {
+        transform: scale(1.2);
+      }
 
       @include c.small {
         width: 32%;
@@ -68,17 +83,24 @@ body {
     }
 
     span {
+      display: flex;
       color: rgb(174, 162, 152);
       // background-color: rgba(14, 47, 117, 0.926);
-      // font-size: 15pt;
-      color: white;
+      font-size: 25px;
       padding: 11%;
       margin: 2%;
-      border-radius: 2px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      // border-radius: 2px;
+
+      // flex-direction: column;
+      // justify-content: center;
+      // align-items: center;
+      transition: all 0.25s ease-in-out;
+      &:hover {
+        transform: scale(1.7);
+      }
+      :hover {
+        color: rgb(174, 162, 152, 0.5);
+      }
 
       @include c.small {
         padding: 8%;

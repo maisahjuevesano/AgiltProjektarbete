@@ -36,6 +36,25 @@ export function createHtml(products: Product[]) {
   rootContainer.innerHTML = "";
 
   for (let i = 0; i < products.length; i++) {
+    //här skapar jag en section om oss och en bild med text
+    // let aboutUsContainer: HTMLDivElement = document.createElement("div");
+    // aboutUsContainer.classList.add("aboutUsContainer");
+
+    // let aboutUsContainerTwo: HTMLDivElement = document.createElement("div");
+    // aboutUsContainerTwo.classList.add("aboutUsContainer__two");
+
+    // let img: HTMLImageElement = document.createElement("img");
+    // img.classList.add("aboutUsContainer__img");
+    // img.setAttribute(
+    //   "src",
+    //   "https://www.ikea.com/global/assets/navigation/images/cookware-kt003.jpeg?imwidth=300"
+    // );
+    // // img.setAttribute("alt", )
+    // aboutUsContainerTwo.appendChild(img);
+    // aboutUsContainer.appendChild(aboutUsContainerTwo);
+    // rootContainer.appendChild(aboutUsContainer);
+
+    //här kommer petras koder
     let objectContainer: HTMLDivElement = document.createElement("div");
     objectContainer.className = "productContainer";
 
