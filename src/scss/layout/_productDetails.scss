@@ -29,6 +29,34 @@ body {
       margin: 0;
     }
 
+    span.addToCart {
+      background-color: rgb(109, 49, 49);
+      // background-color: rgba(14, 47, 117, 0.926);
+      // font-size: 15pt;
+      color: white;
+      padding: 0;
+      margin: 0;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      :hover {
+        cursor: pointer;
+        background-color: rgba(129, 69, 69, 0.71);
+        transition: transform 0.2s;
+        transform: scale(1.2);
+      }
+
+      @include c.small {
+        padding: 8%;
+      }
+
+      @include c.medium {
+        padding: 4%;
+      }
+    }
+
     // .addToCart {
     //   background-color: rgb(109, 49, 49);
     //   // background-color: rgba(14, 47, 117, 0.926);
