@@ -48,7 +48,7 @@ function handlePayClick() {
   if (cartProducts.length !== 0) {
     // window.location.href = "../pages/orderConfirmation.html";
     window.location.href = "../pages/payment.html";
-    emptyShoppingCart(cartProducts);
+    //emptyShoppingCart(cartProducts);
   } else {
     alert("Ojdå! Ser ut som att din varukorg är tom!");
   }
