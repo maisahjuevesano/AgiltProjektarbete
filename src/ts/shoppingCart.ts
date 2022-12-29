@@ -204,7 +204,12 @@ function newAmountOfProducts(cartProducts: Product[]) {
   localStorage.setItem("cartList", JSON.stringify(cartProducts));
 }
 
-//let displaySum: HTMLDivElement = document.createElement("div");
-//displaySum.innerHTML = totalAmount + "kr";
-
-//den lyckas inte få in data från listan
+export const filterfromshoppingcart = () => {
+  let filterallproducts: HTMLAnchorElement = document.getElementById(
+    "allProducts"
+  ) as HTMLAnchorElement;
+  filterallproducts.addEventListener("click", () => {
+    window.location.href = "../index.html";
+  });
+};
+filterfromshoppingcart();
