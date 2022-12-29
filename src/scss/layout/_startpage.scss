@@ -7,7 +7,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  #root {
+  #rootStart {
     margin: 0;
     padding: 2%;
     background-color: rgb(255, 255, 255);
@@ -41,43 +41,57 @@ body {
 
     // .clickContainer {
     //   text-decoration: none;
-    img {
-      @include c.productPic;
 
-      @include c.small {
-        width: 28vw;
+    .clickContainer {
+      :hover {
+        cursor: pointer;
+        transition: transform 0.2s;
+        transform: scale(1.2);
       }
-      @include c.medium {
-        width: 21vw;
+
+      img {
+        @include c.productPic;
+
+        @include c.small {
+          width: 28vw;
+        }
+        @include c.medium {
+          width: 21vw;
+        }
+      }
+
+      p.product__title {
+        width: 90%;
+        margin: 5%;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      p.product__price {
+        font-weight: 600;
+        margin: 5%;
+        text-align: center;
+        text-decoration: none;
       }
     }
-
-    p.product__title {
-      width: 90%;
-      margin: 5%;
-      text-align: center;
-      text-decoration: none;
-    }
-
-    p.product__price {
-      font-weight: 600;
-      margin: 5%;
-      text-align: center;
-      text-decoration: none;
-    }
-
-    span {
+    span.addToCart {
       background-color: rgb(109, 49, 49);
       // background-color: rgba(14, 47, 117, 0.926);
       // font-size: 15pt;
       color: white;
-      padding: 11%;
-      margin: 2%;
+      padding: 0;
+      margin: 0;
       border-radius: 2px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      :hover {
+        cursor: pointer;
+        background-color: rgba(129, 69, 69, 0.71);
+        transition: transform 0.2s;
+        transform: scale(1.2);
+      }
 
       @include c.small {
         padding: 8%;
