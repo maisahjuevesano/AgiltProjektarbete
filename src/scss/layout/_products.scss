@@ -10,6 +10,7 @@ body {
   #root {
     margin: 0;
     padding: 2%;
+    // background-color: rgb(255, 255, 255);
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-wrap: wrap;
@@ -19,7 +20,7 @@ body {
     .productContainer {
       width: 45%;
       // height: 30%;
-      background-color: rgb(238, 238, 238);
+      // background-color: rgb(238, 238, 238);
       margin: 2%;
       padding: 5%;
       display: flex;
