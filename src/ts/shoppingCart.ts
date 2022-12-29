@@ -1,6 +1,5 @@
 import {
   addEmptyShoopingCart,
-  addFilterFunctionality,
   beingAbleToPay,
   createshoppingCartHtml,
   totalAmount,

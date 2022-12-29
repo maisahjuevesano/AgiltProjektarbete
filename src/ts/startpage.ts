@@ -1,8 +1,4 @@
-import {
-  addFilterFunctionality,
-  goToShoppingCart,
-  startpageCreateHtml,
-} from "./functions";
+import { addFilterFunctionality, startpageCreateHtml } from "./functions";
 import { products } from "./services/getData";
 import { CartProduct } from "./models/CartProduct";
 
@@ -18,7 +14,7 @@ window.onload = function () {
     "shoppingCartSymbol"
   ) as HTMLAnchorElement;
   cartSymbol.addEventListener("click", () => {
-    window.location.href = "pages/shoppingCart.html"; //annan sökväg jämfört med från startpage.html
+    window.location.href = "shoppingCart.html"; //annan sökväg jämfört med från startpage.html
   });
   // goToShoppingCart(); //eventListener för att gå till shoppingCart.html
 };

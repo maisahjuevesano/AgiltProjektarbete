@@ -51,7 +51,7 @@ export function startpageCreateHtml(products: Product[]) {
       //klicka för att komma till produktbeskrivningssida
       console.log("klickat obj: ", products[i]);
 
-      window.location.href = "pages/productDetails.html";
+      window.location.href = "productDetails.html";
       // createDescriptionHtml(products[i]);
     });
 
@@ -93,7 +93,7 @@ export const goToShoppingCart = () => {
   ) as HTMLAnchorElement;
 
   cartSymbol.addEventListener("click", () => {
-    window.location.href = "pages/shoppingCart.html";
+    window.location.href = "shoppingCart.html";
   });
 };
 
@@ -121,6 +121,7 @@ export function addFilterFunctionality() {
     "allProducts"
   ) as HTMLAnchorElement;
   unfilteredProducts.addEventListener("click", () => {
+    window.location.href = "index.html";
     startpageCreateHtml(products);
   });
 }
@@ -245,7 +246,7 @@ export function beingAbleToPay() {
 
 export function handlePayClick() {
   if (cartProducts.length !== 0) {
-    window.location.href = "../pages/payment.html";
+    window.location.href = "payment.html";
   } else {
     alert("Ojdå! Ser ut som att din varukorg är tom!");
   }

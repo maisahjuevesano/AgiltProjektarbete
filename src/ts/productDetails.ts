@@ -11,4 +11,11 @@ window.onload = function () {
   cartSymbol.addEventListener("click", () => {
     window.location.href = "shoppingCart.html"; //annan sökväg jämfört med från startpage.html
   });
+
+  let unfilteredProducts: HTMLAnchorElement = document.getElementById(
+    "allProducts"
+  ) as HTMLAnchorElement;
+  unfilteredProducts.addEventListener("click", () => {
+    window.location.href = "index.html";
+  });
 };
