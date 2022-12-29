@@ -1,3 +1,4 @@
+import { showAllProducts } from "./functions";
 import { Product } from "./models/Products";
 
 window.onload = function () {
@@ -59,7 +60,6 @@ export const showDescription = (product: Product) => {
   // rootDiv.appendChild(addToCart);
 };
 
-//verkar ej funka kika på sen
 function goToShoppingCart() {
   let cartSymbol: HTMLAnchorElement = document.getElementById(
     "cart"
@@ -69,3 +69,16 @@ function goToShoppingCart() {
     window.location.href = "shoppingCart.html";
   });
 }
+
+//filter knappen så man kommer till alla produkter från productDetails
+
+export const filterfromproductdetails = () => {
+  let filterallproducts: HTMLAnchorElement = document.getElementById(
+    "allProducts"
+  ) as HTMLAnchorElement;
+  filterallproducts.addEventListener("click", () => {
+    window.location.href = "../index.html";
+  });
+};
+
+filterfromproductdetails();

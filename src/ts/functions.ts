@@ -8,6 +8,7 @@ export const showAllProducts = () => {
     "allProducts"
   ) as HTMLAnchorElement;
   unfilteredProd.addEventListener("click", () => {
+    window.location.href = "../index.html";
     createHtml(products);
   });
 };

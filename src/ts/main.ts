@@ -1,5 +1,3 @@
-// import { prova } from "../productDetail/ts/productDetails";
-// import { provaLite } from "../productDetail/ts/productDetails";
 import {
   showAllProducts,
   showFryingPans,
@@ -7,11 +5,7 @@ import {
   showSaucePans,
 } from "./functions";
 import { Product } from "./models/Products";
-import { SelectedCartItem } from "./models/SelectedCartItem";
 import { products } from "./services/getData";
-import { noDouble, showShoppingCart } from "./shoppingCart";
-
-// import { SelectedProduct } from "./models/SelectedProducts";
 
 window.onload = function () {
   createHtml(products);
@@ -33,6 +27,7 @@ Satake
 Jamie Oliver
 Lodge
 ********************************/
+//behövs denna kommentar ovanför?
 export function createHtml(products: Product[]) {
   console.log("Varukorg: ", cartProducts); //visar alla produkter i ens varukorg
   let rootContainer: HTMLDivElement = document.getElementById(
@@ -40,16 +35,12 @@ export function createHtml(products: Product[]) {
   ) as HTMLDivElement;
   rootContainer.innerHTML = "";
 
-  for (let i = 1; i < products.length; i++) {
+  for (let i = 0; i < products.length; i++) {
     let objectContainer: HTMLDivElement = document.createElement("div");
     objectContainer.className = "productContainer";
 
     let clickableContainer: HTMLDivElement = document.createElement("div");
     clickableContainer.className = "clickContainer";
-    // clickableContainer.setAttribute(
-    //   "href",
-    //   "productDetail/productDetails.html"
-    // );
 
     let picture: HTMLImageElement = document.createElement("img");
     picture.src = products[i].imageUrl;
@@ -80,7 +71,6 @@ export function createHtml(products: Product[]) {
       window.location.href = "../pages/productDetails.html";
 
       sendProductDetailsToLs(products[i]);
-      // noDouble();
     });
 
     let cartSymbol: HTMLAnchorElement = document.getElementById(
@@ -92,15 +82,11 @@ export function createHtml(products: Product[]) {
     });
 
     addToCartBtn.addEventListener("click", () => {
-      // test();
       handleClick(products[i]);
       console.log("Varukorg: ", cartProducts);
-      // noDouble();
     });
   }
 }
-
-// listan
 
 export function handleClick(product: Product) {
   cartProducts.push(product);
