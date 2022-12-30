@@ -1,8 +1,10 @@
 // @use "mixins" as m;
 @use "../components/" as c;
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -110,20 +112,12 @@ body {
       }
 
       .clickContainer {
-<<<<<<< HEAD
         // :hover {
         //   cursor: pointer;
         //   transition: transform 0.2s;
         //   transform: scale(1.2);
         // } 
         //ta bort detta? den skär bilden ovanför och namnet på produkten
-=======
-        :hover {
-          cursor: pointer;
-          transition: transform 0.2s;
-          transform: scale(1.1);
-        }
->>>>>>> 3a11057cd5dd6080849ba603ddc4e8ac28497288
 
         img {
           @include c.productPic;
