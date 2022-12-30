@@ -1,27 +1,58 @@
 @use "../components/" as c;
 
+body {
+  margin: 0%;
+}
+
 .top-nav {
-  margin-top: 0%;
-  width: 100vw;
+
+  width: 100vw; //är detta bra?
   display: flex;
   flex-direction: row;
   align-items: center;
-  // justify-content: space-between;
   background-color: rgb(174, 162, 152);
   color: c.$primaryColor;
   padding: 1em;
+  gap: 5%;
 
-  &__logo {
-    visibility: hidden;
+  @include c.small {
+    // background-color: green;
+
+
   }
 
-  #logo {
+  &__logo {
+    height: 40px;
+
     &:hover {
       transform: scale(1.1);
     }
+  }
 
+  &__fake {
+    visibility: hidden;
+  }
 
-    @include c.small {}
+  &__cart {
+    display: flex;
+    font-size: 20px;
+    color: black;
+    align-items: center;
+    padding-left: 10%;
+
+    &:hover {
+      transform: scale(1.7);
+    }
+
+    @include c.small {
+      padding-left: 22%;
+
+    }
+  }
+
+  &__container {
+    display: flex;
+    width: 245px;
   }
 }
 
@@ -33,7 +64,6 @@
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
-
   background-color: rgb(174, 162, 152);
 
   &__link {
@@ -41,7 +71,7 @@
     font-size: 20px;
     margin: 0 1rem;
     overflow: hidden;
-    padding: 0%;
+
   }
 
   &__link:hover {
@@ -141,22 +171,4 @@ a {
     width: 100%;
     color: c.$primaryColor;
   }
-}
-
-.fa-solid {
-  color: white;
-
-  &:hover {
-    transform: scale(1.2);
-  }
-
-}
-
-#shoppingCartSymbol {
-
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-
-
 }

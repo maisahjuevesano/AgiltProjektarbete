@@ -7,14 +7,62 @@ body {
   align-items: center;
   justify-content: center;
 
-  .aboutUsContainer__img {
+  .aboutContainer {
     display: flex;
-    flex-direction: row;
-  }
+    flex-direction: column;
+    height: 35vh;
+    width: 100vw;
 
-  .imgnow {
-    display: flex;
-    width: 100%;
+    @include c.small {
+      height: 70vh;
+
+    }
+
+    @include c.medium {
+      height: 120vh;
+
+    }
+
+    &__second {
+      display: flex;
+      background-size: cover;
+      background-image: url(../assets/img/picture.jpg);
+      background-position: center;
+      background-color: rgb(174, 162, 152);
+      width: 104%;
+      height: 35vh;
+
+      @include c.small {
+        height: 80vh;
+
+      }
+
+      @include c.medium {
+        height: 120vh;
+
+
+      }
+    }
+
+    &__text {
+      display: flex;
+      margin-top: 4%;
+      margin-left: 45%;
+      font-size: 10px;
+      width: 150px;
+
+      @include c.small {
+        font-size: 25px;
+        width: 400px;
+        margin-left: 40%;
+
+      }
+
+      @include c.medium {
+        font-size: 35px;
+      }
+
+    }
   }
 
   #rootStart {
@@ -56,11 +104,12 @@ body {
       }
 
       .clickContainer {
-        :hover {
-          cursor: pointer;
-          transition: transform 0.2s;
-          transform: scale(1.2);
-        }
+        // :hover {
+        //   cursor: pointer;
+        //   transition: transform 0.2s;
+        //   transform: scale(1.2);
+        // } 
+        //ta bort detta? den skär bilden ovanför och namnet på produkten
 
         img {
           @include c.productPic;
