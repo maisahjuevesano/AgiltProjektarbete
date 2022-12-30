@@ -1,7 +1,7 @@
 @use "../components/" as c;
 
-body {
-  margin: 0%;
+html {
+  scroll-behavior: smooth;
 }
 
 .top-nav {
@@ -53,6 +53,8 @@ body {
   &__container {
     display: flex;
     width: 245px;
+
+    @include c.small {}
   }
 }
 
