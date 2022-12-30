@@ -11,9 +11,22 @@ export function startpageCreateHtml(products: Product[]) {
   let rootContainer: HTMLDivElement = document.getElementById(
     "rootStart"
   ) as HTMLDivElement;
-  rootContainer.innerHTML = "";
 
   for (let i = 0; i < products.length; i++) {
+    //Gäller INTE "alla produkter"
+    if (products.length < 12) {
+      let categoryTitle: HTMLHeadingElement = document.getElementById(
+        "categoryTitle"
+      ) as HTMLHeadingElement;
+      categoryTitle.innerHTML = products[i].category;
+    }
+    if (products.length === 12) {
+      let categoryTitle: HTMLHeadingElement = document.getElementById(
+        "categoryTitle"
+      ) as HTMLHeadingElement;
+      categoryTitle.innerHTML = "Alla produkter";
+    }
+
     let objectContainer: HTMLDivElement = document.createElement("div");
     objectContainer.className = "productContainer";
 
@@ -121,17 +134,21 @@ export function addFilterFunctionality() {
     "allProducts"
   ) as HTMLAnchorElement;
   unfilteredProducts.addEventListener("click", () => {
-    window.location.href = "index.html";
+    let rootContainer: HTMLDivElement = document.getElementById(
+      "rootStart"
+    ) as HTMLDivElement;
+    rootContainer.innerHTML = "";
     startpageCreateHtml(products);
   });
 }
 
 /*****************************' */
 
-let knives: Product[] = [];
 export const showKnives = () => {
+  let knives: Product[] = [];
+
   let results = products.filter((obj) => {
-    return obj.category === "Kniv";
+    return obj.category === "Knivar";
   });
   knives = results;
   console.log("Knivar i lista: ", knives);
@@ -143,10 +160,11 @@ export const showKnives = () => {
 };
 
 /************************************************** */
-let fryingPans: Product[] = [];
 export const showFryingPans = () => {
+  let fryingPans: Product[] = [];
+
   let results = products.filter((obj) => {
-    return obj.category === "Stekpanna";
+    return obj.category === "Stekpannor";
   });
   fryingPans = results;
   console.log("Stekpannor i lista: ", fryingPans);
@@ -159,10 +177,11 @@ export const showFryingPans = () => {
 
 /************************************************** */
 
-let saucePans: Product[] = [];
 export const showSaucePans = () => {
+  let saucePans: Product[] = [];
+
   let results = products.filter((obj) => {
-    return obj.category === "Kastrull";
+    return obj.category === "Kastruller";
   });
   saucePans = results;
   console.log("Stekpannor i lista: ", saucePans);

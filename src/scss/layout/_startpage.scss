@@ -1,6 +1,8 @@
 // @use "mixins" as m;
 @use "../components/" as c;
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -15,6 +17,10 @@ body {
   .imgnow {
     display: flex;
     width: 100%;
+  }
+
+  h2#categoryTitle {
+    text-align: center;
   }
 
   #rootStart {
@@ -59,7 +65,7 @@ body {
         :hover {
           cursor: pointer;
           transition: transform 0.2s;
-          transform: scale(1.2);
+          transform: scale(1.1);
         }
 
         img {
@@ -139,10 +145,7 @@ body {
             transform: scale(1.2);
           }
         }
-
       }
     }
-
-
   }
 }

@@ -7,6 +7,8 @@ window.onload = function () {
     localStorage.getItem("cartList") || "[]"
   );
   console.log("Varukorg: ", cartProducts);
+  console.log("Varor som visas: ", products);
+
   startpageCreateHtml(products);
   addFilterFunctionality(); //möjlighet att filtrera efter kategori
 

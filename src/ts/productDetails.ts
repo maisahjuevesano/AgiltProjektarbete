@@ -1,7 +1,6 @@
 import { addFilterFunctionality, createDescriptionHtml } from "./functions";
 
 window.onload = function () {
-  addFilterFunctionality(); //möjlighet att filtrera efter kategori
   createDescriptionHtml(); //skapa html med just DEN varan
 
   //eventListener för att gå till shoppingCart.html
