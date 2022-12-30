@@ -16,10 +16,12 @@
   }
 
   #logo {
-    // width: 50vw;
-
-    @include c.small {
+    &:hover {
+      transform: scale(1.1);
     }
+
+
+    @include c.small {}
   }
 }
 
@@ -87,16 +89,16 @@ a {
   margin-top: 8px;
 }
 
-#menu-toggle:checked + .menu-button-container .menu-button::before {
+#menu-toggle:checked+.menu-button-container .menu-button::before {
   margin-top: 0px;
   transform: rotate(405deg);
 }
 
-#menu-toggle:checked + .menu-button-container .menu-button {
+#menu-toggle:checked+.menu-button-container .menu-button {
   background: rgba(255, 255, 255, 0);
 }
 
-#menu-toggle:checked + .menu-button-container .menu-button::after {
+#menu-toggle:checked+.menu-button-container .menu-button::after {
   margin-top: 0px;
   transform: rotate(-405deg);
 }
@@ -105,6 +107,7 @@ a {
   .menu-button-container {
     display: flex;
   }
+
   .menu {
     position: absolute;
     top: 0;
@@ -115,19 +118,22 @@ a {
     justify-content: center;
     align-items: center;
   }
-  #menu-toggle ~ .menu li {
+
+  #menu-toggle~.menu li {
     height: 0;
     margin: 0;
     padding: 0;
     border: 0;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
-  #menu-toggle:checked ~ .menu li {
+
+  #menu-toggle:checked~.menu li {
     height: 2.5em;
     padding: 0.5em;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
-  .menu > li {
+
+  .menu>li {
     display: flex;
     justify-content: center;
     margin: 0;
@@ -138,5 +144,19 @@ a {
 }
 
 .fa-solid {
-  color: c.$primaryColor;
+  color: white;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+}
+
+#shoppingCartSymbol {
+
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+
+
 }
