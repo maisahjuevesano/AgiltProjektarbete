@@ -295,6 +295,7 @@ export function emptyingShoppingCart(cartProducts: CartProduct[]) {
   rootDiv.innerHTML = ""; //töm html
   window.location.reload();
   createShoppingCartHtml(cartProducts); //ifall listans längd är 0 skriver createShoppingCartHtml ut "varukorgen är tom"
+  totalAmountOfCartProducts(cartProducts); //räknar ut antalet varor i varukorg
   totalAmount(cartProducts); //totalbeloppet att betala uppdateras
 }
 
@@ -306,17 +307,17 @@ export const totalAmount = (articlePrice: CartProduct[]) => {
   let sum: number = 0;
   let sumText = "";
   container.innerHTML = "";
-  motherContainer.innerHTML = "";
 
   for (let i = 0; i < articlePrice.length; i++) {
     sum += articlePrice[i].product.price * articlePrice[i].amount;
   }
 
   sumText = sum.toString();
-  container.innerHTML = sumText;
+  container.innerHTML = sumText + " kr";
   motherContainer.appendChild(container);
   console.log(sum);
-  return sum;
+
+  // return sum;
 };
 
 /******************************************* */
@@ -381,6 +382,7 @@ export const createShoppingCartHtml = (cartProducts: CartProduct[]) => {
         amountNumber.innerHTML = `${selectedAmountText} st`;
         cartProducts[i].amount++;
         newAmountOfProducts(cartProducts);
+        totalAmountOfCartProducts(cartProducts); //räknar ut antalet varor i varukorg
         totalAmount(cartProducts);
         console.log("Uppdaterad varukorg: ", cartProducts);
       });
@@ -402,7 +404,8 @@ export const createShoppingCartHtml = (cartProducts: CartProduct[]) => {
         }
 
         // console.log(selectedAmount);
-        totalAmount(cartProducts); //
+        totalAmountOfCartProducts(cartProducts); //räknar ut antalet varor i varukorg
+        totalAmount(cartProducts); //räknar ut totalbelopp att betala
         // console.log(cartProducts);
       });
 
@@ -412,6 +415,7 @@ export const createShoppingCartHtml = (cartProducts: CartProduct[]) => {
 
       removeArticle.addEventListener("click", () => {
         removeArticleFromCart(cartProducts[i], cartProducts); //tar bort produkten
+        totalAmountOfCartProducts(cartProducts); //räknar ut antalet varor i varukorg
         totalAmount(cartProducts); //räkna om totalbelopp
         window.location.reload();
         // createShoppingCartHtml(cartProducts); //skapa ny html
@@ -443,3 +447,38 @@ export function removeArticleFromCart(
 export function newAmountOfProducts(cartProducts: CartProduct[]) {
   localStorage.setItem("cartList", JSON.stringify(cartProducts));
 }
+
+// export const showAmountOfProductsInCart = () => {
+//   let sumRootDiv: HTMLDivElement = document.getElementById("root_sum") as HTMLDivElement;
+// let amountOfCartProducts: HTMLSpanElement = document.createElement("span");
+
+// let cartProducts: CartProduct[] = getShoppingCartFromLS();
+
+// for (let i = 0; i < cartProducts.length; i++) {
+// cartProducts.
+// }
+// amountOfCartProducts.innerHTML = cartProducts.
+// }
+
+export const totalAmountOfCartProducts = (cartProducts: CartProduct[]) => {
+  let motherContainer: HTMLDivElement = document.getElementById(
+    "root_sum"
+  ) as HTMLDivElement;
+
+  motherContainer.innerHTML = "";
+
+  let amountContainer = document.createElement("span");
+  let sum: number = 0;
+  let sumText = "";
+
+  for (let i = 0; i < cartProducts.length; i++) {
+    sum += cartProducts[i].amount;
+    console.log("Antal varor", sum);
+  }
+
+  sumText = sum.toString();
+  amountContainer.innerHTML = "Antal varor i varukorgen: " + sumText;
+
+  motherContainer.appendChild(amountContainer);
+  console.log(sum);
+};

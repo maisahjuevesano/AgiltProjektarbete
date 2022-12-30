@@ -3,6 +3,7 @@ import {
   beingAbleToPay,
   createShoppingCartHtml,
   totalAmount,
+  totalAmountOfCartProducts,
 } from "./functions";
 import { CartProduct } from "./models/CartProduct";
 
@@ -22,6 +23,7 @@ window.onload = function () {
   // addFilterFunctionality(); //möjlighet att filtrera efter kategori
   beingAbleToPay(); //eventListener på "gå vidare"-knapp
   addEmptyShoopingCart(cartProducts); //eventListener på "töm hela varukorgen"-knapp
+  totalAmountOfCartProducts(cartProducts); //räknar ut antalet varor i varukorg
   totalAmount(cartProducts); //räknar ut totalbelopp att betala i varukorg
   createShoppingCartHtml(cartProducts); //skapar html för varukorgens varor
 };
