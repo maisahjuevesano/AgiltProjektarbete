@@ -294,7 +294,7 @@ export function emptyingShoppingCart(cartProducts: CartProduct[]) {
   console.log(cartProducts);
   rootDiv.innerHTML = ""; //töm html
   window.location.reload();
-  createshoppingCartHtml(cartProducts); //ifall listans längd är 0 skriver createshoppingCartHtml ut "varukorgen är tom"
+  createShoppingCartHtml(cartProducts); //ifall listans längd är 0 skriver createShoppingCartHtml ut "varukorgen är tom"
   totalAmount(cartProducts); //totalbeloppet att betala uppdateras
 }
 
@@ -321,7 +321,7 @@ export const totalAmount = (articlePrice: CartProduct[]) => {
 
 /******************************************* */
 
-export const createshoppingCartHtml = (cartProducts: CartProduct[]) => {
+export const createShoppingCartHtml = (cartProducts: CartProduct[]) => {
   let rootDiv: HTMLDivElement = document.getElementById(
     "rootShoppingCart"
   ) as HTMLDivElement;
@@ -398,7 +398,7 @@ export const createshoppingCartHtml = (cartProducts: CartProduct[]) => {
           cartProducts.splice(index, 1);
           console.log("Ny varukorg: ", cartProducts);
           localStorage.setItem("cartList", JSON.stringify(cartProducts));
-          createshoppingCartHtml(cartProducts);
+          window.location.reload();
         }
 
         // console.log(selectedAmount);
@@ -413,7 +413,8 @@ export const createshoppingCartHtml = (cartProducts: CartProduct[]) => {
       removeArticle.addEventListener("click", () => {
         removeArticleFromCart(cartProducts[i], cartProducts); //tar bort produkten
         totalAmount(cartProducts); //räkna om totalbelopp
-        createshoppingCartHtml(cartProducts); //skapa ny html
+        window.location.reload();
+        // createShoppingCartHtml(cartProducts); //skapa ny html
       });
 
       cartArticle.appendChild(articleImg);

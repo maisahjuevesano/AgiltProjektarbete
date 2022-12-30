@@ -1,7 +1,7 @@
 import {
   addEmptyShoopingCart,
   beingAbleToPay,
-  createshoppingCartHtml,
+  createShoppingCartHtml,
   totalAmount,
 } from "./functions";
 import { CartProduct } from "./models/CartProduct";
@@ -23,5 +23,5 @@ window.onload = function () {
   beingAbleToPay(); //eventListener på "gå vidare"-knapp
   addEmptyShoopingCart(cartProducts); //eventListener på "töm hela varukorgen"-knapp
   totalAmount(cartProducts); //räknar ut totalbelopp att betala i varukorg
-  createshoppingCartHtml(cartProducts); //skapar html för varukorgens varor
+  createShoppingCartHtml(cartProducts); //skapar html för varukorgens varor
 };
