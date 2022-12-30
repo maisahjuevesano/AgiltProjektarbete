@@ -7,7 +7,6 @@ body {
   align-items: center;
   justify-content: center;
 
-<<<<<<< HEAD:src/scss/layout/_products.scss
   .aboutUsContainer__img {
     display: flex;
     flex-direction: row;
@@ -18,10 +17,7 @@ body {
     width: 100%;
   }
 
-  #root {
-=======
   #rootStart {
->>>>>>> e699b1795c678467448acecc0b29edc1584d0489:src/scss/layout/_startpage.scss
     margin: 0;
     padding: 2%;
     // background-color: rgb(255, 255, 255);
@@ -43,6 +39,7 @@ body {
       align-items: center;
       cursor: pointer;
       transition: all 0.25s ease-in-out;
+
       &:hover {
         transform: scale(1.2);
       }
@@ -57,105 +54,95 @@ body {
       @include c.medium {
         width: 23vw;
       }
-    }
 
-    // .clickContainer {
-    //   text-decoration: none;
+      .clickContainer {
+        :hover {
+          cursor: pointer;
+          transition: transform 0.2s;
+          transform: scale(1.2);
+        }
 
-    .clickContainer {
-      :hover {
-        cursor: pointer;
-        transition: transform 0.2s;
-        transform: scale(1.2);
+        img {
+          @include c.productPic;
+
+          @include c.small {
+            width: 28vw;
+          }
+
+          @include c.medium {
+            width: 21vw;
+          }
+        }
+
+        p.product__title {
+          width: 90%;
+          margin: 5%;
+          text-align: center;
+          text-decoration: none;
+        }
+
+        p.product__price {
+          font-weight: 600;
+          margin: 5%;
+          text-align: center;
+          text-decoration: none;
+        }
       }
 
-      img {
-        @include c.productPic;
+      span {
+        display: flex;
+        color: rgb(174, 162, 152);
+        // background-color: rgba(14, 47, 117, 0.926);
+        font-size: 25px;
+        padding: 11%;
+        margin: 2%;
+        // border-radius: 2px;
+
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        transition: all 0.25s ease-in-out;
+
+        &:hover {
+          transform: scale(1.7);
+        }
+
+        :hover {
+          color: rgb(174, 162, 152, 0.5);
+        }
 
         @include c.small {
-          width: 28vw;
+          padding: 8%;
         }
+
         @include c.medium {
-          width: 21vw;
+          padding: 4%;
         }
-      }
 
-      p.product__title {
-        width: 90%;
-        margin: 5%;
-        text-align: center;
-        text-decoration: none;
-      }
+        span.addToCart {
+          background-color: rgb(109, 49, 49);
+          // background-color: rgba(14, 47, 117, 0.926);
+          // font-size: 15pt;
+          color: white;
+          padding: 0;
+          margin: 0;
+          border-radius: 2px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
 
-      p.product__price {
-        font-weight: 600;
-        margin: 5%;
-        text-align: center;
-        text-decoration: none;
-      }
-    }
-<<<<<<< HEAD:src/scss/layout/_products.scss
+          :hover {
+            cursor: pointer;
+            background-color: rgba(129, 69, 69, 0.71);
+            transition: transform 0.2s;
+            transform: scale(1.2);
+          }
+        }
 
-    p.product__title {
-      width: 90%;
-      margin: 5%;
-      text-align: center;
-      text-decoration: none;
-    }
-
-    p.product__price {
-      font-weight: 600;
-      margin: 5%;
-      text-align: center;
-      text-decoration: none;
-    }
-
-    span {
-      display: flex;
-      color: rgb(174, 162, 152);
-      // background-color: rgba(14, 47, 117, 0.926);
-      font-size: 25px;
-      padding: 11%;
-      margin: 2%;
-      // border-radius: 2px;
-
-      // flex-direction: column;
-      // justify-content: center;
-      // align-items: center;
-      transition: all 0.25s ease-in-out;
-      &:hover {
-        transform: scale(1.7);
-      }
-      :hover {
-        color: rgb(174, 162, 152, 0.5);
-=======
-    span.addToCart {
-      background-color: rgb(109, 49, 49);
-      // background-color: rgba(14, 47, 117, 0.926);
-      // font-size: 15pt;
-      color: white;
-      padding: 0;
-      margin: 0;
-      border-radius: 2px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      :hover {
-        cursor: pointer;
-        background-color: rgba(129, 69, 69, 0.71);
-        transition: transform 0.2s;
-        transform: scale(1.2);
->>>>>>> e699b1795c678467448acecc0b29edc1584d0489:src/scss/layout/_startpage.scss
-      }
-
-      @include c.small {
-        padding: 8%;
-      }
-
-      @include c.medium {
-        padding: 4%;
       }
     }
+
+
   }
 }
