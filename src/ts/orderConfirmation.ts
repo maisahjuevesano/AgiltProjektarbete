@@ -1,7 +1,9 @@
-import { getShoppingCartFromLS } from "./functions";
+import { clickableAllProducts, getShoppingCartFromLS } from "./functions";
 import { CartProduct } from "./models/CartProduct";
 
 window.onload = function () {
+  clickableAllProducts();
+
   let orderNumber: number = Math.floor(Math.random() * 999999 + 111111);
   let orderNumberText: string = orderNumber.toString();
   let confirmationNumber = document.getElementById(

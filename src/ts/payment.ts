@@ -1,7 +1,14 @@
-let sendme = document.getElementById("payButton") as HTMLButtonElement;
+import { clickableAllProducts } from "./functions";
 
-sendme.addEventListener("click", () => {
-  console.log("hej");
+window.onload = function () {
+  //kunna klicka på alla produkter
+  clickableAllProducts();
 
-  window.location.href = "../pages/orderConfirmation.html";
-});
+  //kunna klicka på betala-knapp
+  let sendme = document.getElementById("payButton") as HTMLButtonElement;
+  sendme.addEventListener("click", () => {
+    console.log("hej");
+
+    window.location.href = "orderConfirmation.html";
+  });
+};

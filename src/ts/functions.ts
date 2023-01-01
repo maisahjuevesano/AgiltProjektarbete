@@ -120,6 +120,19 @@ export function getShoppingCartFromLS() {
 }
 
 /****************************** */
+export const clickableAllProducts = () => {
+  let unfilteredProducts: HTMLAnchorElement = document.getElementById(
+    "allProducts"
+  ) as HTMLAnchorElement;
+  unfilteredProducts.addEventListener("click", () => {
+    window.location.href = "index.html";
+    let rootContainer: HTMLDivElement = document.getElementById(
+      "rootStart"
+    ) as HTMLDivElement;
+    rootContainer.innerHTML = "";
+    startpageCreateHtml(products);
+  });
+};
 
 export function addFilterFunctionality() {
   document
@@ -313,7 +326,7 @@ export const totalAmount = (articlePrice: CartProduct[]) => {
   }
 
   sumText = sum.toString();
-  container.innerHTML = sumText + " kr";
+  container.innerHTML = "Totalbelopp: " + sumText + " kr";
   motherContainer.appendChild(container);
   console.log(sum);
 
