@@ -363,12 +363,12 @@ export const createShoppingCartHtml = (cartProducts: CartProduct[]) => {
       subIcon.classList.add("amountContainer__subIcon");
 
       let cartArticle: HTMLDivElement = document.createElement("div");
-      cartArticle.className = "article--container";
+      cartArticle.className = "article__container";
 
       let articleImg: HTMLImageElement = document.createElement("img");
       articleImg.src = cartProducts[i].product.imageUrl;
       articleImg.alt = cartProducts[i].product.name;
-      articleImg.className = "article--pic";
+      articleImg.className = "article__pic";
 
       let articleTitle: HTMLParagraphElement = document.createElement("p");
       articleTitle.innerHTML = cartProducts[i].product.name;
@@ -382,7 +382,7 @@ export const createShoppingCartHtml = (cartProducts: CartProduct[]) => {
       articlePrice.innerHTML = priceText + " kr";
 
       let removeArticle: HTMLSpanElement = document.createElement("span");
-      removeArticle.className = "delete--article";
+      removeArticle.className = "article__delete";
       removeArticle.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
 
       let selectedAmount = cartProducts[i].amount;

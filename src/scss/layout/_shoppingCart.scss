@@ -1,24 +1,65 @@
 @use "../../scss/components" as c;
 
-button {
-  border: 2px solid gray;
-  border-radius: 10px;
+button#emptyCart {
+  border: 1px solid rgb(150, 150, 150);
+  border-radius: 25px;
   padding: 3%;
   margin: 5%;
-}
-
-button#pay {
-  padding: 5%;
-  background-color: rgb(120, 47, 47);
   color: white;
   font-weight: 600;
+  background-color: rgb(174, 162, 152);
+
+  &:hover {
+    background-color: rgba(189, 181, 174, 0.9);
+    cursor: pointer;
+    transition: transform 0.2s;
+    transform: scale(1.1);
+  }
+
+  @include c.small {
+    padding: 2%;
+    border-radius: 30px;
+  }
+
+  @include c.medium {
+    padding: 1.5%;
+    border-radius: 35px;
+  }
+}
+
+button#goToPayForm {
+  padding: 3%;
+  margin: 5%;
+  border-radius: 25px;
+  border: 1px solid rgb(122, 122, 122);
+  background-color: rgba(97, 37, 37, 0.858);
+  color: white;
+  font-weight: 600;
+
+  &:hover {
+    background-color: rgba(109, 56, 56, 0.858);
+    cursor: pointer;
+    transition: transform 0.2s;
+    transform: scale(1.1);
+  }
+
+  @include c.small {
+    padding: 2%;
+    border-radius: 30px;
+    margin: 3%;
+  }
+
+  @include c.medium {
+    padding: 1.5%;
+    border-radius: 35px;
+  }
 }
 
 #rootShoppingCart {
   display: flex;
   flex-direction: column;
 
-  .article--container {
+  .article__container {
     width: 80vw;
     display: flex;
     flex-direction: column;
@@ -33,20 +74,43 @@ button#pay {
     }
   }
 
-  img.article--pic {
-    width: 15vw;
+  img.article__pic {
+    width: 40%;
     @include c.small {
-      width: 10vw;
+      width: 15%;
     }
 
     @include c.medium {
-      width: 5vw;
+      width: 7%;
     }
   }
 
-  .delete--article {
-    background-color: unset;
-    padding: 0;
+  .amountContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+
+    .amountContainer__subIcon,
+    .amountContainer__addIcon {
+      color: rgb(174, 162, 152);
+
+      &:hover {
+        cursor: pointer;
+        color: rgba(189, 181, 174, 0.9);
+      }
+    }
+  }
+}
+
+.fa-trash-can {
+  color: rgb(174, 162, 152);
+  padding: 15px;
+
+  &:hover {
+    cursor: pointer;
+    color: rgba(189, 181, 174, 0.9);
   }
 }
 
@@ -56,11 +120,12 @@ button#pay {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.amountContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  gap: 5px;
+
+  @include c.small {
+    margin: 3%;
+  }
+
+  span {
+    margin-bottom: 4%;
+  }
 }
