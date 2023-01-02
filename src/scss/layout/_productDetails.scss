@@ -12,10 +12,11 @@ body {
 
     h2 {
       text-align: center;
+      font-family: "Courier New", Courier, monospace;
     }
 
     img {
-      width: 70vw;
+      width: 60vw;
 
       @include c.small {
         width: 40vw;
@@ -23,19 +24,23 @@ body {
     }
 
     p,
-    span,
-    h3 {
-      padding: 5%;
-      margin: 0;
+    span {
+      padding: 3%;
+      margin: 0%;
+      font-family: "Courier New", Courier, monospace;
     }
 
+    h3 {
+      padding: 0%;
+      margin: 10px;
+    }
     span.addToCart {
-      background-color: rgb(109, 49, 49);
+      background-color: white;
       // background-color: rgba(14, 47, 117, 0.926);
-      // font-size: 15pt;
-      color: white;
-      padding: 0;
-      margin: 0;
+      font-size: 25pt;
+      color: lightgray;
+      padding: 0px;
+      margin: 0px;
       border-radius: 2px;
       display: flex;
       flex-direction: column;
@@ -43,13 +48,13 @@ body {
       align-items: center;
       :hover {
         cursor: pointer;
-        background-color: rgba(129, 69, 69, 0.71);
-        transition: transform 0.2s;
-        transform: scale(1.2);
+        background-color: white;
+        transition: transform 0.5s;
+        transform: scale(1.4);
       }
 
       @include c.small {
-        padding: 8%;
+        padding: 0%;
       }
 
       @include c.medium {
@@ -72,4 +77,19 @@ body {
     //   align-items: center;
     // }
   }
+}
+button {
+  display: flex;
+  background-color: #612525db;
+  color: whitesmoke;
+  margin-top: 15px;
+
+  border: 1px solid gray;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #612525db;
+  color: white;
+  transition: transform 0.2s;
+  transform: scale(1.2);
 }
