@@ -9,17 +9,15 @@
       crossorigin="anonymous"
     ></script>
     <title>Varukorg</title>
-    <!-- <link rel="stylesheet" href="/src/shoppingCart/scss/shoppingCart.scss" /> -->
+
     <link rel="stylesheet" href="scss/main.scss" />
     <script defer src="ts/shoppingCart.ts" type="module"></script>
   </head>
   <body>
-    <nav>
-      <section class="top-nav">
-        <div class="top-nav__bag">
-          <a href="index.html"
-            ><img class="top-nav__logo" src="./assets/img/logo.jpg" alt="logo"
-          /></a>
+    <header>
+      <nav class="top-nav">
+        <div class="top-nav__container">
+          <a href="index.html"><img class="top-nav__logo" src="./assets/img/logo.jpg" alt="logo"/></a>
           <a id="shoppingCartSymbol" class="top-nav__cart" href="#">
             <i class="fa-solid fa-cart-shopping"></i>
           </a>
@@ -30,19 +28,20 @@
         <label class="menu-button-container" for="menu-toggle">
           <div class="menu-button"></div>
         </label>
-
+  
         <ul class="menu">
-          <a href="#" id="allProducts"
-            ><li class="menu__link">Alla produkter</li></a
-          >
+          <a href="#categoryTitle" id="allProducts"><li class="menu__link">Alla produkter</li></a>
+          <a href="#categoryTitle" id="fryingPans"><li class="menu__link">Stekpannor</li></a>
+          <a href="#categoryTitle" id="saucePans"><li class="menu__link">Kastruller</li></a>
+          <a href="#categoryTitle"id="knives"><li class="menu__link">Knivar</li></a>
         </ul>
       </section>
     </nav>
-
+  </header>
     <button type="button" id="emptyCart">Rensa varukorg</button>
     <div id="rootShoppingCart"></div>
     <div id="root_sum"></div>
-    <button id="goToPayForm">Gå vidare</button>
+    <button id="goToPayForm">Betala</button>
 
     <footer class="containerlist" id="contact">
       <ul class="containerlist__adress">

@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Betalningsida</title>
-    <!-- <link rel="stylesheet" href="scss/startpage.scss" /> -->
     <link rel="stylesheet" href="scss/main.scss" />
     <script
       src="https://kit.fontawesome.com/fd2b1d7132.js"
@@ -14,34 +13,30 @@
     <script defer src="ts/payment.ts" type="module"></script>
   </head>
   <body>
-    <nav>
-      <section class="top-nav">
-        <div class="top-nav__bag">
-          <a href="index.html"
-            ><img id="logo" src="/src/assets/img/logo.jpg" alt="logo"
-          /></a>
-          <a id="shoppingCartSymbol" class="shoppingcartIcon" href="#">
+    <header>
+      <nav class="top-nav">
+        <div class="top-nav__container">
+          <a href="index.html"><img class="top-nav__logo" src="./assets/img/logo.jpg" alt="logo"/></a>
+          <a id="shoppingCartSymbol" class="top-nav__cart" href="#">
             <i class="fa-solid fa-cart-shopping"></i>
           </a>
         </div>
 
-        <div class="top-nav__logo">Logo Here</div>
+        <div class="top-nav__fake">Logo</div>
         <input id="menu-toggle" type="checkbox" />
         <label class="menu-button-container" for="menu-toggle">
           <div class="menu-button"></div>
         </label>
-
+  
         <ul class="menu">
-          <a href="#" id="allProducts"
-            ><li class="menu__link">Alla produkter</li></a
-          >
-          <a href="#" id="fryingPans"><li class="menu__link">Stekpannor</li></a>
-          <a href="#" id="saucePans"><li class="menu__link">Kastruller</li></a>
-          <a href="#" id="knives"><li class="menu__link">Knivar</li></a>
+          <a href="#categoryTitle" id="allProducts"><li class="menu__link">Alla produkter</li></a>
+          <a href="#categoryTitle" id="fryingPans"><li class="menu__link">Stekpannor</li></a>
+          <a href="#categoryTitle" id="saucePans"><li class="menu__link">Kastruller</li></a>
+          <a href="#categoryTitle"id="knives"><li class="menu__link">Knivar</li></a>
         </ul>
       </section>
     </nav>
-
+  </header>
     <div id="root">
       <div class="form">
         <h1>Dina uppgifter</h1>
@@ -118,6 +113,7 @@
               placeholder=""
               required
             />
+            
 
             <label for="cc-cvv" class="form__label">CVV</label>
             <input
@@ -128,7 +124,7 @@
               required
             />
             <div class="form__buttoncontainer">
-              <button id="payButton" class="form__button">Betala</button>
+              <button id="payButton" class="form__button">Beställ</button>
             </div>
           </div>
         </div>
