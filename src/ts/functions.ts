@@ -495,3 +495,47 @@ export const totalAmountOfCartProducts = (cartProducts: CartProduct[]) => {
   motherContainer.appendChild(amountContainer);
   console.log(sum);
 };
+
+export function showAmountsInPaymentPage(cartProducts: CartProduct[]) {
+  let rootBox: HTMLDivElement = document.getElementById(
+    "root__amount"
+  ) as HTMLDivElement;
+  rootBox.innerHTML = "";
+
+  let sumNumber: number = 0;
+  let sumAsText = "";
+
+  for (let i = 0; i < cartProducts.length; i++) {
+    let theProductContainer: HTMLDivElement = document.createElement("div");
+    let theProductTitle: HTMLParagraphElement = document.createElement("p");
+    let theProductAmount: HTMLSpanElement = document.createElement("span");
+
+    theProductTitle.innerHTML = cartProducts[i].product.name;
+    let prodAmountInNum = cartProducts[i].amount.toString();
+    theProductAmount.innerHTML = prodAmountInNum + " st";
+
+    theProductContainer.appendChild(theProductTitle);
+    theProductContainer.appendChild(theProductAmount);
+    rootBox.appendChild(theProductContainer);
+  }
+
+  for (let i = 0; i < cartProducts.length; i++) {
+    sumNumber += cartProducts[i].amount;
+  }
+
+  console.log("Antal varor totalt är: ", sumNumber);
+  sumAsText = sumNumber.toString();
+  let amountBox: HTMLParagraphElement = document.createElement("p");
+  amountBox.innerHTML = "Totalt antal varor: " + sumAsText;
+  rootBox.appendChild(amountBox);
+
+  let priceNum: number = 0;
+  for (let i = 0; i < cartProducts.length; i++) {
+    priceNum += cartProducts[i].product.price * cartProducts[i].amount;
+  }
+
+  let priceAsText = priceNum.toString();
+  let priceBox: HTMLParagraphElement = document.createElement("p");
+  priceBox.innerHTML = "Totalbelopp: " + priceAsText;
+  rootBox.appendChild(priceBox);
+}
