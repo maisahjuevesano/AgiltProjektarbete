@@ -9,28 +9,23 @@
     <script defer src="ts/orderConfirmation.ts" type="module"></script>
   </head>
   <body>
-    <nav>
-      <section class="top-nav">
-        <div class="top-nav__bag">
-          <a href="index.html"
-            ><img id="logo" src="/src/assets/img/logo.jpg" alt="logo"
-          /></a>
-          <a id="shoppingCartSymbol" class="shoppingcartIcon" href="#">
+    <header>
+      <nav class="top-nav">
+        <div class="top-nav__container">
+          <a href="index.html"><img class="top-nav__logo" src="./assets/img/logo.jpg" alt="logo"/></a>
+          <a id="shoppingCartSymbol" class="top-nav__cart" href="#">
             <i class="fa-solid fa-cart-shopping"></i>
           </a>
         </div>
 
-        <div class="top-nav__logo">Logo Here</div>
+        <div class="top-nav__fake">Logo</div>
         <input id="menu-toggle" type="checkbox" />
         <label class="menu-button-container" for="menu-toggle">
           <div class="menu-button"></div>
         </label>
-
+  
         <ul class="menu">
-          <a href="#" id="allProducts"
-            ><li class="menu__link">Alla produkter</li></a
-          >
-          
+          <a href="#categoryTitle" id="allProducts"><li class="menu__link">Alla produkter</li></a>
         </ul>
       </section>
     </nav>
