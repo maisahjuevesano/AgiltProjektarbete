@@ -31,12 +31,30 @@
   }
 
   &__button {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // width: 50px;
+    padding: 5%;
+    // margin: 5%;
+    border-radius: 25px;
+    border: 1px solid rgb(122, 122, 122);
+    background-color: rgba(97, 37, 37, 0.858);
+    color: white;
+    font-weight: 600;
+  }
+
+  &__input {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50px;
+    flex-direction: row;
+
+  }
+
+  &__input-control {
+    width: 85px;
   }
 }
+
 .form-check-input:hover {
   cursor: pointer;
 }

@@ -103,13 +103,21 @@
             <label for="cc-expiration" class="form__label"
               >Upphör att gälla</label
             >
-            <input
+            <div class="form__input"><input
               type="text"
-              class="form-control"
+              class="form__input-control"
+              id="cc-expiration"
+              placeholder=""
+              required> / 
+
+              <input
+              type="text"
+              class="form__input-control"
               id="cc-expiration"
               placeholder=""
               required
-            />
+            /></div>
+            
             
 
             <label for="cc-cvv" class="form__label">CVV</label>
