@@ -80,16 +80,16 @@ body {
 }
 button {
   display: flex;
-  background-color: #612525db;
-  color: whitesmoke;
+  background-color: lightgray;
+  color: black;
   margin-top: 15px;
 
   border: 1px solid gray;
 }
 button:hover {
   cursor: pointer;
-  background-color: #612525db;
-  color: white;
+  background-color: lightgray;
+  color: black;
   transition: transform 0.2s;
   transform: scale(1.2);
 }

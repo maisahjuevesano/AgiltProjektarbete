@@ -248,7 +248,7 @@ export const createDescriptionHtml = () =>
 
     let goBackBtn: HTMLButtonElement = document.createElement("button");
     goBackBtn.type = "button";
-    goBackBtn.innerHTML = "Tillbaka till föregående sida";
+    goBackBtn.innerHTML = "Tillbaka";
     goBackBtn.addEventListener("click", () => {
       history.back();
     });
