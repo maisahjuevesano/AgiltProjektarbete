@@ -56,6 +56,10 @@ header {
         font-size: 30px;
         padding-left: 22%;
       }
+
+      @include c.medium {
+        padding-left: 75%;
+      }
     }
 
     &__amountCart {
@@ -91,6 +95,10 @@ header {
       font-size: 17px;
       margin: 0 1rem;
       overflow: hidden;
+
+      @include c.medium {
+        font-size: 20px;
+      }
 
   
     }

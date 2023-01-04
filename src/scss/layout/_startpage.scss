@@ -23,7 +23,7 @@ body {
     }
 
     @include c.medium {
-      height: 120vh;
+      // height: 100vh;
 
     }
 
@@ -43,8 +43,7 @@ body {
       }
 
       @include c.medium {
-        height: 80vh;
-
+        // height: 80vh;
 
       }
     }
@@ -64,7 +63,8 @@ body {
       }
 
       @include c.medium {
-        font-size: 35px;
+        margin-top: 5%;
+        font-size: 25px;
       }
 
     }
