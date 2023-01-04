@@ -8,7 +8,6 @@ header {
   width: 100vw;
 
   .top-nav {
-    height: 20vh;
     width: 100%; //är detta bra?
     display: flex;
     flex-direction: row;
@@ -18,9 +17,6 @@ header {
     padding: 1em;
     gap: 5%;
 
-    @include c.small {
-      // background-color: green;
-    }
 
     &__logo {
       height: 40px;
@@ -32,6 +28,17 @@ header {
 
     &__fake {
       visibility: hidden;
+      font-size: 1px;
+
+      @include c.small {
+        padding-left: 2%;
+        
+        }
+
+      @include c.medium {
+      padding-left: 20%;
+      
+      }
     }
 
     &__cart {
@@ -39,20 +46,25 @@ header {
       font-size: 20px;
       color: black;
       align-items: center;
-      padding-left: 10%;
+      padding-left: 5%;
 
       &:hover {
-        transform: scale(1.7);
+        transform: scale(1.1);
       }
 
       @include c.small {
+        font-size: 30px;
         padding-left: 22%;
       }
     }
 
     &__amountCart {
       color: white;
+      font-size: 20px;
+
+      @include c.small {
       font-size: 25px;
+      }
 
     }
 
@@ -60,7 +72,7 @@ header {
       display: flex;
       width: 245px;
 
-      @include c.small {}
+      
     }
   }
 
@@ -76,9 +88,11 @@ header {
 
     &__link {
       color: c.$primaryColor;
-      font-size: 20px;
+      font-size: 17px;
       margin: 0 1rem;
       overflow: hidden;
+
+  
     }
 
     &__link:hover {
