@@ -32,13 +32,15 @@ button#goToPayForm {
   margin: 5%;
   border-radius: 25px;
   border: 1px solid rgb(122, 122, 122);
-  background-color: rgba(97, 37, 37, 0.858);
-  color: white;
+  // background-color: rgba(97, 37, 37, 0.858);
+  background-color: rgba(133, 150, 121, 0.858);
+  color: black;
   font-weight: 600;
 
   &:hover {
     border: 1px solid rgb(122, 122, 122);
-    background-color: rgb(214, 211, 213);
+    // background-color: rgb(214, 211, 213);
+    background-color: rgba(169, 182, 161, 0.858);
     color: black;
     // background-color: rgba(109, 56, 56, 0.858);
     cursor: pointer;
