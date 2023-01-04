@@ -14,13 +14,13 @@ window.onload = function () {
   let cartProducts: CartProduct[] = getShoppingCartFromLS();
   showAmountsInPaymentPage(cartProducts);
 
-  //kunna klicka på betala-knapp
-  let sendme = document.getElementById("payButton") as HTMLButtonElement;
-  sendme.addEventListener("click", () => {
-    console.log("hej");
+  //kunna klicka på beställ-knapp
+  // let sendme = document.getElementById("payButton") as HTMLButtonElement;
+  // sendme.addEventListener("click", () => {
+  //   console.log("hej");
 
-    window.location.href = "orderConfirmation.html";
-  });
+  //   window.location.href = "orderConfirmation.html";
+  // });
 };
 
 
