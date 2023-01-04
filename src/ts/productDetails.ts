@@ -1,4 +1,12 @@
-import { addFilterFunctionality, createDescriptionHtml } from "./functions";
+import { addFilterFunctionality, createDescriptionHtml, amountOfProductsInShoppingcartIcon } from "./functions";
+
+
+window.addEventListener("load", () => {
+  amountOfProductsInShoppingcartIcon();
+});
+
+
+amountOfProductsInShoppingcartIcon();
 
 window.onload = function () {
   createDescriptionHtml(); //skapa html med just DEN varan

@@ -1,7 +1,31 @@
+.maincontainer {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-around;
+  height: 90vh;
+}
+
 .form {
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &__order {
+    display: flex;
+    margin-top: 5%;
+    flex-direction: column;
+    // background-color: rgb(174, 162, 152);
+  }
+
+  &__orderInfo {
+    background-color: rgb(174, 162, 152, 0.2);
+    border: 1px rgb(174, 162, 152) solid;
+    text-decoration: underline;
+
+
+  }
 
   &__container {
     display: flex;
@@ -31,35 +55,35 @@
   }
 
   &__button {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    // width: 50px;
     padding: 5%;
-    // margin: 5%;
     border-radius: 25px;
-    border: 1px solid rgb(122, 122, 122);
-    background-color: rgba(97, 37, 37, 0.858);
-    color: white;
+    background-color: rgb(214, 211, 213);
     font-weight: 600;
+
+    &:hover {
+      background-color: rgba(189, 181, 174, 0.9);
+      cursor: pointer;
+      transition: transform 0.2s;
+      transform: scale(1.1);
+    }
+
+    &__input {
+      display: flex;
+      flex-direction: row;
+
+    }
+
+    &__input-control {
+      width: 85px;
+    }
   }
 
-  &__input {
-    display: flex;
-    flex-direction: row;
-
+  .form-check-input:hover {
+    cursor: pointer;
   }
 
-  &__input-control {
-    width: 85px;
+  #payButton {
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
-}
-
-.form-check-input:hover {
-  cursor: pointer;
-}
-
-#payButton {
-  margin-top: 15px;
-  margin-bottom: 15px;
 }

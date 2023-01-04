@@ -1,9 +1,11 @@
 import {
   clickableAllProducts,
   getShoppingCartFromLS,
+  amountOfProductsInShoppingcartIcon,
   showAmountsInPaymentPage,
 } from "./functions";
 import { CartProduct } from "./models/CartProduct";
+
 
 window.onload = function () {
   //kunna klicka på alla produkter
@@ -20,3 +22,6 @@ window.onload = function () {
     window.location.href = "orderConfirmation.html";
   });
 };
+
+
+amountOfProductsInShoppingcartIcon();

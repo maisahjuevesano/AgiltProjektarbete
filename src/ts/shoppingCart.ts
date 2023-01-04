@@ -2,12 +2,17 @@ import {
   addEmptyShoopingCart,
   beingAbleToPay,
   createShoppingCartHtml,
+  amountOfProductsInShoppingcartIcon,
   totalAmount,
   totalAmountOfCartProducts,
 } from "./functions";
 import { CartProduct } from "./models/CartProduct";
 
+
+
+
 window.onload = function () {
+
   let cartProducts: CartProduct[] = JSON.parse(
     localStorage.getItem("cartList") || "[]"
   );
@@ -27,3 +32,6 @@ window.onload = function () {
   totalAmount(cartProducts); //räknar ut totalbelopp att betala i varukorg
   createShoppingCartHtml(cartProducts); //skapar html för varukorgens varor
 };
+
+
+  amountOfProductsInShoppingcartIcon()

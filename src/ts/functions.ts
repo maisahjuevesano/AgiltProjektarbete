@@ -3,6 +3,7 @@ import { Product } from "./models/Products";
 import { CartProduct } from "./models/CartProduct";
 import { products } from "./services/getData";
 
+
 //FÖRST hämta sparad varukorg i LS. Lista består av CartProduct-objekt
 let cartProducts: CartProduct[] = getShoppingCartFromLS();
 
@@ -70,6 +71,7 @@ export function startpageCreateHtml(products: Product[]) {
 
     addToCartBtn.addEventListener("click", () => {
       addToShoppingCart(products[i], cartProducts);
+      amountOfProductsInShoppingcartIcon();
     });
   }
 }
@@ -244,6 +246,7 @@ export const createDescriptionHtml = () =>
     addToCartBtn.innerHTML = `<i class="fas fa-cart-plus"></i>`;
     addToCartBtn.addEventListener("click", () => {
       addToShoppingCart(productToDescribe, cartProducts);
+      amountOfProductsInShoppingcartIcon();
     });
 
     let goBackBtn: HTMLButtonElement = document.createElement("button");
@@ -294,6 +297,7 @@ export const addEmptyShoopingCart = (cartProducts: CartProduct[]) => {
   let emptyBtn = document.getElementById("emptyCart") as HTMLButtonElement;
   emptyBtn.addEventListener("click", () => {
     emptyingShoppingCart(cartProducts); //skicka med varukorgens array och diven som ska tömmas
+    amountOfProductsInShoppingcartIcon();
   });
 };
 
@@ -398,6 +402,7 @@ export const createShoppingCartHtml = (cartProducts: CartProduct[]) => {
         totalAmountOfCartProducts(cartProducts); //räknar ut antalet varor i varukorg
         totalAmount(cartProducts);
         console.log("Uppdaterad varukorg: ", cartProducts);
+        amountOfProductsInShoppingcartIcon();
       });
 
       subIcon.addEventListener("click", () => {
@@ -420,6 +425,7 @@ export const createShoppingCartHtml = (cartProducts: CartProduct[]) => {
         totalAmountOfCartProducts(cartProducts); //räknar ut antalet varor i varukorg
         totalAmount(cartProducts); //räknar ut totalbelopp att betala
         // console.log(cartProducts);
+        amountOfProductsInShoppingcartIcon();
       });
 
       addIcon.innerHTML = `<i class="fa-solid fa-circle-plus"></i>`;
@@ -507,8 +513,11 @@ export function showAmountsInPaymentPage(cartProducts: CartProduct[]) {
 
   for (let i = 0; i < cartProducts.length; i++) {
     let theProductContainer: HTMLDivElement = document.createElement("div");
+    theProductContainer.classList.add("form__orderInfo")
     let theProductTitle: HTMLParagraphElement = document.createElement("p");
+    theProductTitle.classList.add("form__orderInfoTitle")
     let theProductAmount: HTMLSpanElement = document.createElement("span");
+    theProductAmount.classList.add("form__orderInfoTotal")
 
     theProductTitle.innerHTML = cartProducts[i].product.name;
     let prodAmountInNum = cartProducts[i].amount.toString();
@@ -538,4 +547,34 @@ export function showAmountsInPaymentPage(cartProducts: CartProduct[]) {
   let priceBox: HTMLParagraphElement = document.createElement("p");
   priceBox.innerHTML = "Totalbelopp: " + priceAsText;
   rootBox.appendChild(priceBox);
+}
+
+//Function for the amount in the shoppingcart icon
+export function amountOfProductsInShoppingcartIcon() {
+
+  let amounOfProductsIcon: HTMLSpanElement = document.getElementById(
+    "amount-cart"
+  ) as HTMLSpanElement;
+
+
+  let cartItem: CartProduct[] = JSON.parse(
+    localStorage.getItem("cartList") || "[]"
+  );
+
+  if (
+    typeof localStorage["cartList"] === "undefined" ||
+    localStorage["cartList"] === "[]"
+  ) {
+    console.log("Varukorgen är tom")
+  } else {
+    // amounOfProductsIcon.classList.add("test2");
+    amounOfProductsIcon.classList.add("top-nav__amountCart")
+    let numbersOfProductsInCart = 0;
+    for (let i = 0; i < cartItem.length; i++) {
+      numbersOfProductsInCart += cartItem[i].amount;
+    }
+    let numbersOfProductsInCartText: string =
+      numbersOfProductsInCart.toString();
+    amounOfProductsIcon.innerHTML = numbersOfProductsInCartText;
+  }
 }
