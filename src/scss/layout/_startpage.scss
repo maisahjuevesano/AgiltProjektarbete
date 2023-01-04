@@ -27,6 +27,11 @@ body {
 
     }
 
+    @include c.large {
+      height: 100vh;
+     
+    }
+
     &__second {
       display: flex;
       flex-direction: column;
@@ -45,6 +50,11 @@ body {
       @include c.medium {
         // height: 80vh;
 
+      }
+
+      @include c.large {
+        height: 100vh;
+       
       }
     }
 
