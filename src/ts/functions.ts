@@ -3,7 +3,6 @@ import { Product } from "./models/Products";
 import { CartProduct } from "./models/CartProduct";
 import { products } from "./services/getData";
 
-
 //FÖRST hämta sparad varukorg i LS. Lista består av CartProduct-objekt
 let cartProducts: CartProduct[] = getShoppingCartFromLS();
 
@@ -252,6 +251,7 @@ export const createDescriptionHtml = () =>
     let goBackBtn: HTMLButtonElement = document.createElement("button");
     goBackBtn.type = "button";
     goBackBtn.innerHTML = "Tillbaka";
+    goBackBtn.className = "btn__back";
     goBackBtn.addEventListener("click", () => {
       history.back();
     });
@@ -513,11 +513,11 @@ export function showAmountsInPaymentPage(cartProducts: CartProduct[]) {
 
   for (let i = 0; i < cartProducts.length; i++) {
     let theProductContainer: HTMLDivElement = document.createElement("div");
-    theProductContainer.classList.add("form__orderInfo")
+    theProductContainer.classList.add("form__orderInfo");
     let theProductTitle: HTMLParagraphElement = document.createElement("p");
-    theProductTitle.classList.add("form__orderInfoTitle")
+    theProductTitle.classList.add("form__orderInfoTitle");
     let theProductAmount: HTMLSpanElement = document.createElement("span");
-    theProductAmount.classList.add("form__orderInfoTotal")
+    theProductAmount.classList.add("form__orderInfoTotal");
 
     theProductTitle.innerHTML = cartProducts[i].product.name;
     let prodAmountInNum = cartProducts[i].amount.toString();
@@ -551,11 +551,9 @@ export function showAmountsInPaymentPage(cartProducts: CartProduct[]) {
 
 //Function for the amount in the shoppingcart icon
 export function amountOfProductsInShoppingcartIcon() {
-
   let amounOfProductsIcon: HTMLSpanElement = document.getElementById(
     "amount-cart"
   ) as HTMLSpanElement;
-
 
   let cartItem: CartProduct[] = JSON.parse(
     localStorage.getItem("cartList") || "[]"
@@ -565,10 +563,10 @@ export function amountOfProductsInShoppingcartIcon() {
     typeof localStorage["cartList"] === "undefined" ||
     localStorage["cartList"] === "[]"
   ) {
-    console.log("Varukorgen är tom")
+    console.log("Varukorgen är tom");
   } else {
     // amounOfProductsIcon.classList.add("test2");
-    amounOfProductsIcon.classList.add("top-nav__amountCart")
+    amounOfProductsIcon.classList.add("top-nav__amountCart");
     let numbersOfProductsInCart = 0;
     for (let i = 0; i < cartItem.length; i++) {
       numbersOfProductsInCart += cartItem[i].amount;

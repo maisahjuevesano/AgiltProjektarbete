@@ -1,7 +1,37 @@
-@use "./../../scss/components" as c;
+// @use "./../components/mixins" as m;
+// @use "./../components/buttons" as btn;
+// @use "./../components/breakpoints" as bp;
+@use "./../components/" as c;
 
 body {
   background-color: rgb(255, 255, 255);
+
+  .btn__back {
+    border: 1px solid rgb(150, 150, 150);
+    background-color: rgb(214, 211, 213);
+    border-radius: 25px;
+    padding: 3%;
+    margin: 5%;
+    color: black;
+    font-weight: 600;
+
+    &:hover {
+      background-color: rgba(189, 181, 174, 0.9);
+      cursor: pointer;
+      transition: transform 0.2s;
+      transform: scale(1.1);
+    }
+
+    @include c.small {
+      padding: 2%;
+      border-radius: 30px;
+    }
+
+    @include c.medium {
+      padding: 1.5%;
+      border-radius: 35px;
+    }
+  }
 
   #productDetailRoot {
     display: flex;
@@ -12,7 +42,6 @@ body {
 
     h2 {
       text-align: center;
-      font-family: "Courier New", Courier, monospace;
     }
 
     img {
@@ -23,73 +52,50 @@ body {
       }
     }
 
+    // p {
+    //   padding: 3%;
+    //   margin: 0%;
+    // }
+
     p,
     span {
-      padding: 3%;
-      margin: 0%;
-      font-family: "Courier New", Courier, monospace;
+      margin: 0;
+      padding: 6%;
+      text-align: justify;
+      font-size: 10pt;
+
+      @include c.small {
+        font-size: 14pt;
+      }
     }
 
     h3 {
       padding: 0%;
       margin: 10px;
     }
+
     span.addToCart {
-      background-color: white;
-      // background-color: rgba(14, 47, 117, 0.926);
-      font-size: 25pt;
-      color: lightgray;
-      padding: 0px;
-      margin: 0px;
-      border-radius: 2px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      :hover {
-        cursor: pointer;
-        background-color: white;
-        transition: transform 0.5s;
-        transform: scale(1.4);
+      color: rgb(174, 162, 152);
+      font-size: 25px;
+      padding: 11%;
+      margin: 2%;
+      transition: all 0.25s ease-in-out;
+
+      &:hover {
+        transform: scale(1.7);
+        color: rgb(174, 162, 152, 0.5);
       }
 
       @include c.small {
-        padding: 0%;
+        padding: 5%;
+        font-size: 40px;
       }
 
       @include c.medium {
         padding: 4%;
+        font-size: 50px;
       }
     }
-
-    // .addToCart {
-    //   background-color: rgb(109, 49, 49);
-    //   // background-color: rgba(14, 47, 117, 0.926);
-    //   // font-size: 15pt;
-    //   width: 16%;
-    //   color: white;
-    //   padding: 5%;
-    //   margin: 2%;
-    //   border-radius: 2px;
-    //   display: flex;
-    //   flex-direction: column;
-    //   justify-content: center;
-    //   align-items: center;
-    // }
   }
-}
-button {
-  display: flex;
-  background-color: lightgray;
-  color: black;
-  margin-top: 15px;
-
-  border: 1px solid gray;
-}
-button:hover {
-  cursor: pointer;
-  background-color: lightgray;
-  color: black;
-  transition: transform 0.2s;
-  transform: scale(1.2);
 }
