@@ -377,10 +377,6 @@ export const createShoppingCartHtml = (cartProducts: CartProduct[]) => {
       let articleTitle: HTMLParagraphElement = document.createElement("p");
       articleTitle.innerHTML = cartProducts[i].product.name;
 
-      // let articleAmount: HTMLParagraphElement = document.createElement("p");
-      // let amountText = cartProducts[i].amount.toString();
-      // articleAmount.innerHTML = amountText + " st";
-
       let articlePrice: HTMLParagraphElement = document.createElement("p");
       let priceText = cartProducts[i].product.price.toString();
       articlePrice.innerHTML = priceText + " kr";
@@ -467,17 +463,6 @@ export function newAmountOfProducts(cartProducts: CartProduct[]) {
   localStorage.setItem("cartList", JSON.stringify(cartProducts));
 }
 
-// export const showAmountOfProductsInCart = () => {
-//   let sumRootDiv: HTMLDivElement = document.getElementById("root_sum") as HTMLDivElement;
-// let amountOfCartProducts: HTMLSpanElement = document.createElement("span");
-
-// let cartProducts: CartProduct[] = getShoppingCartFromLS();
-
-// for (let i = 0; i < cartProducts.length; i++) {
-// cartProducts.
-// }
-// amountOfCartProducts.innerHTML = cartProducts.
-// }
 
 export const totalAmountOfCartProducts = (cartProducts: CartProduct[]) => {
   let motherContainer: HTMLDivElement = document.getElementById(
@@ -571,7 +556,6 @@ export function amountOfProductsInShoppingcartIcon() {
   ) {
     console.log("Varukorgen är tom");
   } else {
-    // amounOfProductsIcon.classList.add("test2");
     amounOfProductsIcon.classList.add("top-nav__amountCart");
     let numbersOfProductsInCart = 0;
     for (let i = 0; i < cartItem.length; i++) {

@@ -8,9 +8,6 @@ import {
 } from "./functions";
 import { CartProduct } from "./models/CartProduct";
 
-
-
-
 window.onload = function () {
 
   let cartProducts: CartProduct[] = JSON.parse(
@@ -31,7 +28,8 @@ window.onload = function () {
   totalAmountOfCartProducts(cartProducts); //räknar ut antalet varor i varukorg
   totalAmount(cartProducts); //räknar ut totalbelopp att betala i varukorg
   createShoppingCartHtml(cartProducts); //skapar html för varukorgens varor
+  amountOfProductsInShoppingcartIcon();
 };
 
 
-  amountOfProductsInShoppingcartIcon()
+ 

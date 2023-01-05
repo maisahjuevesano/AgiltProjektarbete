@@ -28,25 +28,9 @@ window.onload = function () {
     window.location.href = "shoppingCart.html"; //annan sökväg jämfört med från startpage.html
     
   });
-  // goToShoppingCart(); //eventListener för att gå till shoppingCart.html
+
  
 
   
 };
 
-
-
-
-
-
-/************************** 
- * ???? om man vill, 
- * ÄR EJ  mvp
-Sortera på brands-egenskapen:
-Global
-Fiskars
-Ronneby Bruk
-Satake 
-Jamie Oliver
-Lodge
-********************************/
