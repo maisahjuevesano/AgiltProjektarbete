@@ -37,87 +37,56 @@
     </nav>
   </header>
   <div class="maincontainer" id="root">
+
+    <button id="gobackToShoppingcart" class="form__gobackBtn">Tillbaka</button>
     <div class="form__order" id="root__amount"></div>
-    <div class="form">
-      <h1>Dina uppgifter</h1>
-      <div class="form__container">
-        <div class="form__contact">
+    <form class="form" action="./orderConfirmation.html">
+      <h1 class="form__title">Dina uppgifter</h1>
+      <label for="fname">Förnamn</label>
+      <input type="text" id="fname" name="fname" required />
 
-          <form action="./orderConfirmation.html">
-            <label for="fname">Förnamn</label><br />
-            <input type="text" id="fname" name="fname" required /><br />
+      <label for="lname">Efternamn</label>
+      <input type="text" id="lname" name="lname" required />
 
-            <label for="lname">Efternamn</label><br />
-            <input type="text" id="lname" name="lname" required /><br />
+      <label for="telefonummer">Telefonnummer</label>
+      <input type="tel" id="telefonummer" required />
 
-            <label for="telefonummer">Telefonnummer</label><br />
-            <input type="tel" id="telefonummer" required /><br />
-
-            <label for="Email">Email</label><br />
-            <input type="email" id="Email" required /><br /><br />
-            <div class="form__paymentoptions-radiobuttons">
-              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required />
-              <label class="form-check-label" for="credit">Klarna</label>
-              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required />
-              <label class="form-check-label" for="debit">Betala med kort</label>
-            </div>
-            <div class="form__icons">
-              <i class="fa-brands fa-cc-amex"></i>
-              <i class="fa-brands fa-cc-visa"></i>
-              <i class="fa-brands fa-cc-mastercard"></i>
-              <i class="fa-brands fa-cc-paypal"></i>
-
-            </div>
-
-            <div class="form__paymentcard">
-              <form action></form>
-              <label for="cc-name" class="form__label">Namn</label>
-              <input type="text" class="form-control" id="cc-name" placeholder="" required />
-
-              <label for="cc-number" class="form__label">Kortnummer</label>
-              <input type="text" class="form-control" id="cc-number" placeholder="" required />
-
-              <label for="cc-expiration" class="form__label">Upphör att gälla</label>
-              <div class="form__input">
-                <input type="text" class="form__input-control" id="cc-expiration" placeholder="" required> /
-
-                <!-- <input
-                    type="text"
-                    class="form__input-control"
-                    id="cc-expiration"
-                    placeholder=""
-                    required
-                  /> -->
-              </div>
-
-              <label for="cc-cvv" class="form__label">CVV</label>
-              <input type="text" class="form-control" id="cc-cvv" placeholder="" required />
-
-
-
-              <input class="form__button" type="submit" value="Beställ">
-
-
-
-
-          </form>
-
-
-
-        </div>
-
-
-
-
-
-
-
-
+      <label for="Email">Email</label>
+      <input type="email" id="Email" required />
+      <div class="form__paymentoptions-radiobuttons">
+        <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required />
+        <label class="form-check-label" for="credit">Klarna</label>
+        <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required />
+        <label class="form-check-label" for="debit">Betala med kort</label>
+      </div>
+      <div class="form__icons">
+        <i class="fa-brands fa-cc-amex"></i>
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-cc-paypal"></i>
 
       </div>
-    </div>
+
+      <div class="form__paymentcard">
+        <form action></form>
+        <label for="cc-name" class="form__label">Namn</label>
+        <input type="text" class="form-control" id="cc-name" placeholder="" required />
+
+        <label for="cc-number" class="form__label">Kortnummer</label>
+        <input type="text" class="form-control" id="cc-number" placeholder="" required />
+
+        <div class="cc-expiration-cvv">
+          <input type="text" class="form__input-control" id="cc-expiration" placeholder="Datum" required>
+          <input type="text" class="form-control" id="cc-cvv" placeholder="CVV" required />
+
+        </div>
+        <input class="form__button" type="submit" value="Beställ">
+    </form>
+
   </div>
   </div>
+
+
   <footer class="containerlist" id="contact">
     <ul class="containerlist__adress">
       <li>Köks Mästarn AB</li>

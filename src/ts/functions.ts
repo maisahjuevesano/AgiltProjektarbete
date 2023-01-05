@@ -503,6 +503,12 @@ export const totalAmountOfCartProducts = (cartProducts: CartProduct[]) => {
 };
 
 export function showAmountsInPaymentPage(cartProducts: CartProduct[]) {
+  let goBackToPay:HTMLButtonElement = document.getElementById("gobackToShoppingcart") as HTMLButtonElement;
+
+  goBackToPay.addEventListener("click", () => {
+    history.back();
+  });
+
   let rootBox: HTMLDivElement = document.getElementById(
     "root__amount"
   ) as HTMLDivElement;

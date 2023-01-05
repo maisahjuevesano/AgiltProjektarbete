@@ -1,36 +1,81 @@
+@use "../components/" as c;
+
 .maincontainer {
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  width: 80%;
+  flex-direction: column;
   justify-content: space-around;
-  height: 90vh;
+  align-items: center;
+
+  @include c.medium {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .form {
-
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  
+  padding-bottom: 20%;
+
+  &__gobackBtn {
+    border: 1px solid rgb(150, 150, 150);
+    background-color: rgb(214, 211, 213);
+    border-radius: 25px;
+    padding: 3%;
+    margin: 5%;
+    color: black;
+    font-weight: 600;
+    width: 95px;
+    
+
+    &:hover {
+      background-color: rgba(189, 181, 174, 0.9);
+      cursor: pointer;
+      transition: transform 0.2s;
+      transform: scale(1.1);
+    }
+
+    @include c.small {
+      padding: 2%;
+      border-radius: 30px;
+    }
+
+    @include c.medium {
+      padding: 1.5%;
+      border-radius: 35px;
+      margin-bottom: 75%;
+    }
+
+  }
+
+  &__title {
+    text-align: center;
+  }
 
   &__order {
     display: flex;
     margin-top: 5%;
     flex-direction: column;
-    // background-color: rgb(174, 162, 152);
+    font-size: 15px;
+
+    @include c.medium {
+      margin-top: 1%;
+    }
+
+
   }
 
   &__orderInfo {
+    display: flex;
+    align-items: center;
     background-color: rgb(174, 162, 152, 0.2);
     border: 1px rgb(174, 162, 152) solid;
     text-decoration: underline;
-
-
-  }
-
-  &__container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  
   }
 
   &__paymentoptions-radiobuttons {
@@ -45,27 +90,43 @@
   &__paymentcard {
     display: flex;
     flex-direction: column;
-    width: 175px;
+    align-items: center;
+    width: 100%;
+    input {
+      width: 178px;
+    }
   }
-
-  &__buttoncontainer {
+  //fixa button
+  .cc-expiration-cvv {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    label {
+      display: block;
+    }
+    input {
+      width: 89px;
+      margin-top: 15px;
+    }
   }
 
   &__button {
-    padding: 5%;
-    border-radius: 25px;
-    background-color: rgb(214, 211, 213);
-    font-weight: 600;
+  padding: 3%;
+  margin: 5%;
+  border-radius: 20px;
+  border: 1px solid rgb(122, 122, 122);
+  background-color: rgba(133, 150, 121, 0.858);
+  color: black;
+  font-weight: 600;
 
-    &:hover {
-      background-color: rgba(189, 181, 174, 0.9);
-      cursor: pointer;
-      transition: transform 0.2s;
-      transform: scale(1.1);
-    }
+  &:hover {
+    border: 1px solid rgb(122, 122, 122);
+    background-color: rgba(169, 182, 161, 0.858);
+    color: black;
+    cursor: pointer;
+    transition: transform 0.2s;
+    transform: scale(1.1);
+  }
+  
 
     &__input {
       display: flex;
