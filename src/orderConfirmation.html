@@ -1,61 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>order bekräftelse</title>
-    <link rel="stylesheet" href="scss/main.scss" />
-    <script defer src="ts/orderConfirmation.ts" type="module"></script>
-  </head>
-  <body>
-    <header>
-      <nav class="top-nav">
-        <div class="top-nav__container">
-          <a href="index.html"><img class="top-nav__logo" src="./assets/img/logo.jpg" alt="logo"/></a>
-          <a id="shoppingCartSymbol" class="top-nav__cart" href="#">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </a>
-        </div>
 
-        <div class="top-nav__fake">Logo</div>
-        <input id="menu-toggle" type="checkbox" />
-        <label class="menu-button-container" for="menu-toggle">
-          <div class="menu-button"></div>
-        </label>
-  
-        <ul class="menu">
-          <a href="#categoryTitle" id="allProducts"><li class="menu__link">Alla produkter</li></a>
-        </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>order bekräftelse</title>
+  <link rel="stylesheet" href="scss/main.scss" />
+  <script defer src="ts/orderConfirmation.ts" type="module"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="top-nav">
+      <div class="top-nav__container">
+        <a href="index.html"><img class="top-nav__logo" src="./assets/img/logo.jpg" alt="logo" /></a>
+        <a id="shoppingCartSymbol" class="top-nav__cart" href="#">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+      </div>
+
+      <div class="top-nav__fake">Logo</div>
+      <input id="menu-toggle" type="checkbox" />
+      <label class="menu-button-container" for="menu-toggle">
+        <div class="menu-button"></div>
+      </label>
+
+      <ul class="menu">
+        <a href="#categoryTitle" id="allProducts">
+          <li class="menu__link">Alla produkter</li>
+        </a>
+      </ul>
       </section>
     </nav>
   </header>
-    <div class="container">
-      <h2>Tack för din beställning!</h2>
-      <h2 class="container__confirmation">Orderbekräftelse</h2>
-      <div class="container__overview">
-        <p id="orderConfirmationNumber" class="container__ordernumber"></p>
-        <p class="container__date">2022-12-19 21:14</p>
-        <p class="container__delivery">Snabbleverans Postnord</p>
-        <p class="container__payment-method">Betalkort</p>
-      </div>
+  <div class="container">
+    <h2>Tack för din beställning!</h2>
+    <h2 class="container__confirmation">Orderbekräftelse</h2>
+    <div class="container__overview">
+      <p id="orderConfirmationNumber" class="container__ordernumber"></p>
+      <p class="container__date">2022-12-19 21:14</p>
+      <p class="container__delivery">Snabbleverans Postnord</p>
+      <p class="container__payment-method">Betalkort</p>
     </div>
-    <div id="root"></div>
-    <footer class="containerlist" id="contact">
-      <ul class="containerlist__adress">
-        <li>Köks Mästarn AB</li>
-        <li>Vasagatan 60</li>
-        <li>112 22 Stockholm</li>
-      </ul>
-      <ul class="containerlist__kontakt">
-        <li>info@koksmastarn.se</li>
-        <li>08-123 123</li>
-      </ul>
-      <ul class="containerlist__socialmedia">
-        <li><i id="socialmediaicon" class="bi bi-instagram"></i> Instagram</li>
-        <li><i id="socialmediaicon" class="bi bi-twitter"></i> Twitter</li>
-        <li><i id="socialmediaicon" class="bi bi-facebook"></i> Facebook</li>
-      </ul>
-    </footer>
-  </body>
+  </div>
+  <div id="root"></div>
+  <footer class="containerlist" id="contact">
+    <ul class="containerlist__adress">
+      <li>Köks Mästarn AB</li>
+      <li>Vasagatan 60</li>
+      <li>112 22 Stockholm</li>
+    </ul>
+    <ul class="containerlist__kontakt">
+      <li>info@koksmastarn.se</li>
+      <li>08-123 123</li>
+    </ul>
+    <ul class="containerlist__socialmedia">
+      <li><i id="socialmediaicon" class="bi bi-instagram"></i> Instagram</li>
+      <li><i id="socialmediaicon" class="bi bi-twitter"></i> Twitter</li>
+      <li><i id="socialmediaicon" class="bi bi-facebook"></i> Facebook</li>
+    </ul>
+  </footer>
+</body>
+
 </html>
